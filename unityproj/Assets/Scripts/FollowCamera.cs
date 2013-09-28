@@ -2,7 +2,7 @@
 using System.Collections;
 using SteveSharp;
 
-public class TopdownCamera : MonoBehaviour
+public class FollowCamera : MonoBehaviour
 {
     public Transform target;
     public float smoothTime = 0.5f;

@@ -1,11 +1,13 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class TopdownMover : MonoBehaviour
+public class RigidbodyMover : MonoBehaviour
 {
     public float fullSpeed = 100f;
     public float activeMaxAccel = 300f;
     public float passiveMaxAccel = 100f;
+
+    public bool inputControlled = true;
 
     Vector3 move = Vector3.zero;
 
@@ -24,6 +26,11 @@ public class TopdownMover : MonoBehaviour
 
     void Update()
     {
+        if( inputControlled )
+        {
+            Vector3 move = new Vector3( Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"), 0f );
+            SetMove( move );
+        }
     }
 	
 	// Update is called once per frame
