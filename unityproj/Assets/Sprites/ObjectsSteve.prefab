@@ -61,7 +61,7 @@ MonoBehaviour:
   atlasWidth: 512
   atlasHeight: 512
   forceSquareAtlas: 0
-  atlasWastage: 64.4794464
+  atlasWastage: 64.0766144
   allowMultipleAtlases: 0
   removeDuplicates: 1
   textureParams:
@@ -582,6 +582,96 @@ MonoBehaviour:
     polyColliderIslands: []
     polyColliderCap: 1
     colliderConvex: 0
+    colliderSmoothSphereCollisions: 0
+    colliderColor: 0
+    attachPoints: []
+  - name: groundrock_angle_down
+    disableTrimming: 0
+    additive: 0
+    scale: {x: 1, y: 1, z: 1}
+    texture: {fileID: 2800000, guid: 233a95ca9bde54e95afe7611de668cb6, type: 3}
+    materialId: 0
+    anchor: 4
+    anchorX: 0
+    anchorY: 0
+    overrideMesh: {fileID: 0}
+    doubleSidedSprite: 0
+    customSpriteGeometry: 0
+    geometryIslands: []
+    dice: 0
+    diceUnitX: 64
+    diceUnitY: 64
+    diceFilter: 0
+    pad: 0
+    extraPadding: 0
+    source: 0
+    fromSpriteSheet: 0
+    hasSpriteSheetId: 0
+    spriteSheetId: 0
+    spriteSheetX: 0
+    spriteSheetY: 0
+    extractRegion: 0
+    regionX: 0
+    regionY: 0
+    regionW: 0
+    regionH: 0
+    regionId: 0
+    colliderType: 4
+    boxColliderMin: {x: 0, y: 0}
+    boxColliderMax: {x: 0, y: 0}
+    polyColliderIslands:
+    - connected: 1
+      points:
+      - {x: 0, y: 0}
+      - {x: 0, y: 24}
+      - {x: 24, y: 24}
+    polyColliderCap: 1
+    colliderConvex: 1
+    colliderSmoothSphereCollisions: 0
+    colliderColor: 0
+    attachPoints: []
+  - name: groundrock_angle_up
+    disableTrimming: 0
+    additive: 0
+    scale: {x: 1, y: 1, z: 1}
+    texture: {fileID: 2800000, guid: d593b908bf2854d29a38e5b6424ec88b, type: 3}
+    materialId: 0
+    anchor: 4
+    anchorX: 0
+    anchorY: 0
+    overrideMesh: {fileID: 0}
+    doubleSidedSprite: 0
+    customSpriteGeometry: 0
+    geometryIslands: []
+    dice: 0
+    diceUnitX: 64
+    diceUnitY: 64
+    diceFilter: 0
+    pad: 0
+    extraPadding: 0
+    source: 0
+    fromSpriteSheet: 0
+    hasSpriteSheetId: 0
+    spriteSheetId: 0
+    spriteSheetX: 0
+    spriteSheetY: 0
+    extractRegion: 0
+    regionX: 0
+    regionY: 0
+    regionW: 0
+    regionH: 0
+    regionId: 0
+    colliderType: 4
+    boxColliderMin: {x: 0, y: 0}
+    boxColliderMax: {x: 0, y: 0}
+    polyColliderIslands:
+    - connected: 1
+      points:
+      - {x: 0, y: 24}
+      - {x: 24, y: 24}
+      - {x: 24, y: 0}
+    polyColliderCap: 1
+    colliderConvex: 1
     colliderSmoothSphereCollisions: 0
     colliderColor: 0
     attachPoints: []

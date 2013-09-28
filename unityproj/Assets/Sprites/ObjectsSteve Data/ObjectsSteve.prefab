@@ -536,6 +536,94 @@ MonoBehaviour:
     colliderConvex: 0
     colliderSmoothSphereCollisions: 0
     attachPoints: []
+  - name: groundrock_angle_down
+    boundsData:
+    - {x: 0, y: -.199999928, z: 0}
+    - {x: 4.80000019, y: 4.40000057, z: 0}
+    untrimmedBoundsData:
+    - {x: 0, y: 0, z: 0}
+    - {x: 4.80000019, y: 4.80000019, z: 0}
+    texelSize: {x: .200000003, y: .200000003}
+    positions:
+    - {x: -2.4000001, y: -2.4000001, z: 0}
+    - {x: 2.4000001, y: -2.4000001, z: 0}
+    - {x: -2.4000001, y: 2.00000024, z: 0}
+    - {x: 2.4000001, y: 2.00000024, z: 0}
+    normals: []
+    tangents: []
+    uvs:
+    - {x: .0449238271, y: .917970717}
+    - {x: .0449238271, y: .964841783}
+    - {x: .0878886729, y: .917970717}
+    - {x: .0878886729, y: .964841783}
+    indices: 000000000300000001000000020000000300000000000000
+    material: {fileID: 2100000, guid: 5d26a4600302b4776b0e2720752c8b2e, type: 2}
+    materialId: 0
+    sourceTextureGUID: 233a95ca9bde54e95afe7611de668cb6
+    extractRegion: 0
+    regionX: 0
+    regionY: 0
+    regionW: 0
+    regionH: 0
+    flipped: 1
+    complexGeometry: 0
+    colliderType: 3
+    colliderVertices:
+    - {x: -2.4000001, y: 2.4000001, z: -.100000001}
+    - {x: -2.4000001, y: 2.4000001, z: .100000001}
+    - {x: -2.4000001, y: -2.4000001, z: -.100000001}
+    - {x: -2.4000001, y: -2.4000001, z: .100000001}
+    - {x: 2.4000001, y: -2.4000001, z: -.100000001}
+    - {x: 2.4000001, y: -2.4000001, z: .100000001}
+    colliderIndicesFwd: 020000000300000000000000000000000300000001000000040000000300000002000000040000000500000003000000000000000100000004000000040000000100000005000000020000000000000004000000050000000100000003000000
+    colliderIndicesBack: 000000000300000002000000010000000300000000000000020000000300000004000000030000000500000004000000040000000100000000000000050000000100000004000000040000000000000002000000030000000100000005000000
+    colliderConvex: 1
+    colliderSmoothSphereCollisions: 0
+    attachPoints: []
+  - name: groundrock_angle_up
+    boundsData:
+    - {x: 0, y: -.199999928, z: 0}
+    - {x: 4.80000019, y: 4.40000057, z: 0}
+    untrimmedBoundsData:
+    - {x: 0, y: 0, z: 0}
+    - {x: 4.80000019, y: 4.80000019, z: 0}
+    texelSize: {x: .200000003, y: .200000003}
+    positions:
+    - {x: -2.4000001, y: -2.4000001, z: 0}
+    - {x: 2.4000001, y: -2.4000001, z: 0}
+    - {x: -2.4000001, y: 2.00000024, z: 0}
+    - {x: 2.4000001, y: 2.00000024, z: 0}
+    normals: []
+    tangents: []
+    uvs:
+    - {x: .0468769521, y: .822267592}
+    - {x: .0468769521, y: .869138658}
+    - {x: .0898417979, y: .822267592}
+    - {x: .0898417979, y: .869138658}
+    indices: 000000000300000001000000020000000300000000000000
+    material: {fileID: 2100000, guid: 5d26a4600302b4776b0e2720752c8b2e, type: 2}
+    materialId: 0
+    sourceTextureGUID: d593b908bf2854d29a38e5b6424ec88b
+    extractRegion: 0
+    regionX: 0
+    regionY: 0
+    regionW: 0
+    regionH: 0
+    flipped: 1
+    complexGeometry: 0
+    colliderType: 3
+    colliderVertices:
+    - {x: -2.4000001, y: -2.4000001, z: -.100000001}
+    - {x: -2.4000001, y: -2.4000001, z: .100000001}
+    - {x: 2.4000001, y: -2.4000001, z: -.100000001}
+    - {x: 2.4000001, y: -2.4000001, z: .100000001}
+    - {x: 2.4000001, y: 2.4000001, z: -.100000001}
+    - {x: 2.4000001, y: 2.4000001, z: .100000001}
+    colliderIndicesFwd: 020000000100000000000000020000000300000001000000040000000300000002000000040000000500000003000000000000000100000004000000040000000100000005000000020000000000000004000000050000000100000003000000
+    colliderIndicesBack: 000000000100000002000000010000000300000002000000020000000300000004000000030000000500000004000000040000000100000000000000050000000100000004000000040000000000000002000000030000000100000005000000
+    colliderConvex: 1
+    colliderSmoothSphereCollisions: 0
+    attachPoints: []
   premultipliedAlpha: 0
   material: {fileID: 0}
   materials:
@@ -549,7 +637,7 @@ MonoBehaviour:
   loadable: 0
   invOrthoSize: .0222222228
   halfTargetHeight: 225
-  buildKey: 516908522
+  buildKey: 1135680269
   dataGuid: fcf9f8695e7374bc1aa4558c7b2c3b4c
   managedSpriteCollection: 0
   hasPlatformData: 0

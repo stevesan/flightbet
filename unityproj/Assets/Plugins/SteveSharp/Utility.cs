@@ -71,6 +71,15 @@ namespace SteveSharp
             else
                 return (int)Mathf.Sign(val);
         }
+
+        public static float LinearMap(
+                float x0, float x1,
+                float y0, float y1,
+                float x )
+        {
+            float t = Unlerp( x0, x1, x );
+            return Mathf.Lerp( y0, y1, t );
+        }
     }
 
 }
