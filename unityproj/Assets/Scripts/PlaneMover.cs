@@ -17,15 +17,19 @@ public class PlaneMover : MonoBehaviour
 
     void FixedUpdate()
     {
-        float angleChange = -Input.GetAxisRaw("Vertical");
-        float stallFactor = Mathf.Clamp(Vector3.Dot(rigidbody.velocity, transform.right), 0, 1);
-        rigidbody.AddTorque(new Vector3(0f, 0f, angleChange * angularSpeed * stallFactor));
+        float speedPercent = rigidbody.velocity.magnitude / maxSpeed;
+        float velocityRightDot = Vector3.Dot(rigidbody.velocity, transform.right);
+        float normalizedVelocityRightDot = Vector3.Dot(rigidbody.velocity.normalized, transform.right);
 
-        Vector3 move = transform.right * Mathf.Max(0, Input.GetAxisRaw("Fire1") * throttle);
+        float angleChange = -Input.GetAxisRaw("Vertical");
+        rigidbody.AddTorque(new Vector3(0f, 0f, angleChange * angularSpeed * Mathf.Max(0, normalizedVelocityRightDot) * speedPercent));
+
+        float negativeVelocityRightDot = Mathf.Clamp(velocityRightDot, -1, 0);
+        Vector3 move = transform.right * Mathf.Max(0, Input.GetAxisRaw("Fire1") * (throttle - (throttle * negativeVelocityRightDot)));
         rigidbody.AddForce(move, ForceMode.Force);
 
-        Vector3 liftForce = new Vector3(0, Mathf.Clamp(Vector3.Dot(rigidbody.velocity, transform.right), 0, 1), 0);
-        rigidbody.AddForce(liftForce * liftSpeed, ForceMode.Force);
+        float liftForce = normalizedVelocityRightDot;
+        rigidbody.AddForce(transform.up * liftForce * liftSpeed * speedPercent, ForceMode.Force);
 
         if (rigidbody.velocity.magnitude > maxSpeed)
         {

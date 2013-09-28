@@ -23,6 +23,8 @@ public class LevelGenerator : MonoBehaviour
 
     public float mineChance = 0.1f;
 
+    public float easyHoopChance = 0.025f;
+
     public static string GridToString( char[,] grid )
     {
         string s = "";
@@ -113,6 +115,19 @@ public class LevelGenerator : MonoBehaviour
                 int yMin = terrainHeight[x] + 1;
                 int y = Mathf.FloorToInt( Mathf.Lerp( yMin, sizeY, Random.value ) );
                 objectsChars[x, y] = 'm';
+            }
+        }
+
+        //----------------------------------------
+        //  Easy Hoops
+        //----------------------------------------
+        for( int x = 0; x < sizeX; x++ )
+        {
+            if( Random.value < easyHoopChance )
+            {
+                int yMin = terrainHeight[x] + 1;
+                int y = Mathf.FloorToInt( Mathf.Lerp( yMin, sizeY, Random.value ) );
+                objectsChars[x, y] = 'e';
             }
         }
 

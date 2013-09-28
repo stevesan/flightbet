@@ -104,6 +104,8 @@ MonoBehaviour:
     prefab: {fileID: 100002, guid: 320bd88013c6f4e4cbeff0df0ff20be7, type: 2}
   - character: m
     prefab: {fileID: 100002, guid: ddf369c7a957447eab1d3c6517f45955, type: 2}
+  - character: e
+    prefab: {fileID: 100004, guid: deb22d2d26924fc4d8b503a4bbdbd282, type: 2}
   playerStartChar: s
   ignoreChar: .
   spawnOnAwake: 0
@@ -121,7 +123,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   genOnAwake: 1
-  sizeX: 200
+  sizeX: 50
   sizeY: 50
   backgroundSpawner: {fileID: 11400004}
   objectsSpawner: {fileID: 11400000}
@@ -133,6 +135,7 @@ MonoBehaviour:
   cloudPerlinThreshB: .200000003
   cloudYMin: 10
   mineChance: .5
+  easyHoopChance: .100000001
 --- !u!114 &11400004
 MonoBehaviour:
   m_ObjectHideFlags: 1
