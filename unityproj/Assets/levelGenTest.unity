@@ -1423,8 +1423,8 @@ MonoBehaviour:
     prefab: {fileID: 100002, guid: 97415207cfb924932b6856f180c89e71, type: 2}
   - character: c
     prefab: {fileID: 100002, guid: 320bd88013c6f4e4cbeff0df0ff20be7, type: 2}
-  - character: m
-    prefab: {fileID: 100002, guid: ddf369c7a957447eab1d3c6517f45955, type: 2}
+  - character: d
+    prefab: {fileID: 100002, guid: 83e126db5c5fc4bc4ba545694bd4d2fa, type: 2}
   playerStartChar: s
   ignoreChar: .
   spawnOnAwake: 0
@@ -1519,6 +1519,14 @@ Prefab:
       propertyPath: m_LocalRotation.w
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 11400004, guid: 960e10dec2f7c4cd995e8da7e8db3036, type: 2}
+      propertyPath: prefabMap.Array.data[3].character
+      value: d
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400004, guid: 960e10dec2f7c4cd995e8da7e8db3036, type: 2}
+      propertyPath: prefabMap.Array.data[3].prefab
+      value: 
+      objectReference: {fileID: 100002, guid: 83e126db5c5fc4bc4ba545694bd4d2fa, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 960e10dec2f7c4cd995e8da7e8db3036, type: 2}
   m_RootGameObject: {fileID: 567704323}
