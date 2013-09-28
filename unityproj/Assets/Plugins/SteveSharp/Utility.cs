@@ -63,6 +63,14 @@ namespace SteveSharp
         {
             return (x - from) / (to - from);
         }
+
+        public static int SignOrZero( float val, float eps = 1e-4f )
+        {
+            if( Mathf.Abs(val) < eps )
+                return 0;
+            else
+                return (int)Mathf.Sign(val);
+        }
     }
 
 }
