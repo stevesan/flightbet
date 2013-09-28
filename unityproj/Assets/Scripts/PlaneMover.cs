@@ -3,13 +3,9 @@ using System.Collections;
 
 public class PlaneMover : MonoBehaviour
 {
-    public float fullSpeed = 100f;
-    public float activeMaxAccel = 300f;
-    public float passiveMaxAccel = 100f;
-    public float fullVerticalControlSpeed = 100f;
-    public float angularSpeed = 5f;
+    public float throttle = 100f;
+    public float angularSpeed = 2f;
     public float liftSpeed = 0.5f;
-    public float outputVal = 1f;
 
     // Use this for initialization
 	void Start()
@@ -27,11 +23,10 @@ public class PlaneMover : MonoBehaviour
         float angleChange = Input.GetAxisRaw("Vertical");
         rigidbody.AddTorque(new Vector3(0f, 0f, angleChange * angularSpeed));
 
-        Vector3 move = transform.right * Mathf.Max(0, Input.GetAxisRaw("Horizontal"));
+        Vector3 move = transform.right * Mathf.Max(0, Input.GetAxisRaw("Horizontal") * throttle);
         rigidbody.AddForce(move, ForceMode.Force);
 
-        outputVal = Vector3.Dot(rigidbody.velocity, transform.right);
-        Vector3 liftForce = new Vector3(0, Vector3.Dot(rigidbody.velocity, transform.right), 0);
+        Vector3 liftForce = new Vector3(0, Mathf.Clamp(Vector3.Dot(rigidbody.velocity, transform.right), 0, 1), 0);
         rigidbody.AddForce(liftForce * liftSpeed, ForceMode.Force);
 
         CheckOnGround();

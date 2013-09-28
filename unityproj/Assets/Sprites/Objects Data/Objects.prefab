@@ -58,10 +58,10 @@ MonoBehaviour:
     normals: []
     tangents: []
     uvs:
-    - {x: 6.2500003e-05, y: 6.2500003e-05}
-    - {x: .874937475, y: 6.2500003e-05}
-    - {x: 6.2500003e-05, y: .624937475}
-    - {x: .874937475, y: .624937475}
+    - {x: 3.12500015e-05, y: .703140616}
+    - {x: 3.12500015e-05, y: .921859384}
+    - {x: .312468737, y: .703140616}
+    - {x: .312468737, y: .921859384}
     indices: 000000000300000001000000020000000300000000000000
     material: {fileID: 2100000, guid: cf27acb2f9e65405fa9166a0b096f31c, type: 2}
     materialId: 0
@@ -71,7 +71,45 @@ MonoBehaviour:
     regionY: 0
     regionW: 0
     regionH: 0
-    flipped: 0
+    flipped: 1
+    complexGeometry: 0
+    colliderType: 0
+    colliderVertices: []
+    colliderIndicesFwd: 
+    colliderIndicesBack: 
+    colliderConvex: 0
+    colliderSmoothSphereCollisions: 0
+    attachPoints: []
+  - name: p47
+    boundsData:
+    - {x: .0999999046, y: 0, z: 0}
+    - {x: 9, y: 3.20000005, z: 0}
+    untrimmedBoundsData:
+    - {x: .0999999046, y: 0, z: 0}
+    - {x: 9, y: 3.20000005, z: 0}
+    texelSize: {x: .200000003, y: .200000003}
+    positions:
+    - {x: -4.4000001, y: -1.60000002, z: 0}
+    - {x: 4.5999999, y: -1.60000002, z: 0}
+    - {x: -4.4000001, y: 1.60000002, z: 0}
+    - {x: 4.5999999, y: 1.60000002, z: 0}
+    normals: []
+    tangents: []
+    uvs:
+    - {x: 3.12500015e-05, y: 1.56250007e-05}
+    - {x: 3.12500015e-05, y: .703109384}
+    - {x: .499968737, y: 1.56250007e-05}
+    - {x: .499968737, y: .703109384}
+    indices: 000000000300000001000000020000000300000000000000
+    material: {fileID: 2100000, guid: cf27acb2f9e65405fa9166a0b096f31c, type: 2}
+    materialId: 0
+    sourceTextureGUID: e2f34ad6f38b3ed499760f53fdd04175
+    extractRegion: 0
+    regionX: 0
+    regionY: 0
+    regionW: 0
+    regionH: 0
+    flipped: 1
     complexGeometry: 0
     colliderType: 0
     colliderVertices: []
@@ -93,7 +131,7 @@ MonoBehaviour:
   loadable: 0
   invOrthoSize: .0222222228
   halfTargetHeight: 225
-  buildKey: 537664720
+  buildKey: 917858792
   dataGuid: 3eb5a144395b545d09f8e646f6f9b004
   managedSpriteCollection: 0
   hasPlatformData: 0
