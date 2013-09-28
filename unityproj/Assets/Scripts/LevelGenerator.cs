@@ -72,10 +72,8 @@ public class LevelGenerator : MonoBehaviour
                     Mathf.PerlinNoise( perlinX, terrainPerlinFreq*x ) );
             terrainHeight[x] = yMax;
 
-            /*
             for( int y = 0; y < yMax; y++ )
-                bgChars[x,y] = 'g';
-                */
+                bgChars[x,y] = 'd';
             bgChars[x, yMax] = 'g';
         }
 
