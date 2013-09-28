@@ -9,7 +9,8 @@ public class LevelGenerator : MonoBehaviour
 
     public int sizeX = 10;
     public int sizeY = 10;
-    public LevelSpawner spawner;
+    public LevelSpawner backgroundSpawner;
+    public LevelSpawner objectsSpawner;
 
     public float terrainPerlinFreq = 0.1f;
     public float terrainMaxHeight = 5;
@@ -20,8 +21,7 @@ public class LevelGenerator : MonoBehaviour
     public float cloudPerlinThreshB = 0.2f;
     public int cloudYMin = 5;
 
-    char[,] chars;
-    int[] terrainHeight;
+    public float mineChance = 0.1f;
 
     public static string GridToString( char[,] grid )
     {
@@ -45,14 +45,21 @@ public class LevelGenerator : MonoBehaviour
         }
     }
 
-    public void Generate()
+    char[,] CreateCharGrid(char defaultChar)
     {
-        chars = new char[ sizeX, sizeY ];
-        terrainHeight = new int[ sizeX ];
+        char[,] grid = new char[ sizeX, sizeY ];
 
         for( int x = 0; x < sizeX; x++ )
         for( int y = 0; y < sizeY; y++ )
-            chars[x,y] = spawner.ignoreChar[0];
+            grid[x,y] = defaultChar;
+
+        return grid;
+    }
+
+    public void Generate()
+    {
+        char[,] bgChars = CreateCharGrid( backgroundSpawner.ignoreChar[0] );
+        int[] terrainHeight = new int[ sizeX ];
 
         //----------------------------------------
         //  Generate basic terrain layer
@@ -67,9 +74,9 @@ public class LevelGenerator : MonoBehaviour
 
             /*
             for( int y = 0; y < yMax; y++ )
-                chars[x,y] = 'g';
+                bgChars[x,y] = 'g';
                 */
-            chars[x, yMax] = 'g';
+            bgChars[x, yMax] = 'g';
         }
 
         //----------------------------------------
@@ -89,13 +96,29 @@ public class LevelGenerator : MonoBehaviour
 
                 if( perlin > thresh )
                 {
-                    chars[x,y] = 'c';
+                    bgChars[x,y] = 'c';
                 }
             }
         }
 
+        backgroundSpawner.Spawn( GridToString(bgChars) );
 
-        spawner.Spawn( GridToString(chars) );
+        //----------------------------------------
+        //  Mines
+        //----------------------------------------
+        char[,] objectsChars = CreateCharGrid( objectsSpawner.ignoreChar[0] );
+
+        for( int x = 0; x < sizeX; x++ )
+        {
+            if( Random.value < mineChance )
+            {
+                int yMin = terrainHeight[x] + 1;
+                int y = Mathf.FloorToInt( Mathf.Lerp( yMin, sizeY, Random.value ) );
+                objectsChars[x, y] = 'm';
+            }
+        }
+
+        objectsSpawner.Spawn( GridToString(objectsChars) );
     }
 
 }

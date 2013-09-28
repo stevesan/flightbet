@@ -232,6 +232,44 @@ MonoBehaviour:
     colliderConvex: 0
     colliderSmoothSphereCollisions: 0
     attachPoints: []
+  - name: mine_temp
+    boundsData:
+    - {x: -.0999999046, y: .100000083, z: 0}
+    - {x: 4.20000029, y: 3.80000019, z: 0}
+    untrimmedBoundsData:
+    - {x: 0, y: 0, z: 0}
+    - {x: 4.80000019, y: 4.80000019, z: 0}
+    texelSize: {x: .200000003, y: .200000003}
+    positions:
+    - {x: -2.20000005, y: -1.80000007, z: 0}
+    - {x: 2.00000024, y: -1.80000007, z: 0}
+    - {x: -2.20000005, y: 2.00000024, z: 0}
+    - {x: 2.00000024, y: 2.00000024, z: 0}
+    normals: []
+    tangents: []
+    uvs:
+    - {x: .375015616, y: .375007808}
+    - {x: .703109384, y: .375007808}
+    - {x: .375015616, y: .523429692}
+    - {x: .703109384, y: .523429692}
+    indices: 000000000300000001000000020000000300000000000000
+    material: {fileID: 2100000, guid: 5d26a4600302b4776b0e2720752c8b2e, type: 2}
+    materialId: 0
+    sourceTextureGUID: 1d558b4df4a1f4d368e2888fad83a835
+    extractRegion: 0
+    regionX: 0
+    regionY: 0
+    regionW: 0
+    regionH: 0
+    flipped: 0
+    complexGeometry: 0
+    colliderType: 0
+    colliderVertices: []
+    colliderIndicesFwd: 
+    colliderIndicesBack: 
+    colliderConvex: 0
+    colliderSmoothSphereCollisions: 0
+    attachPoints: []
   premultipliedAlpha: 0
   material: {fileID: 0}
   materials:
@@ -245,7 +283,7 @@ MonoBehaviour:
   loadable: 0
   invOrthoSize: .0222222228
   halfTargetHeight: 225
-  buildKey: 1947920591
+  buildKey: 15363861
   dataGuid: fcf9f8695e7374bc1aa4558c7b2c3b4c
   managedSpriteCollection: 0
   hasPlatformData: 0

@@ -23,18 +23,12 @@ public class LevelSpawner : MonoBehaviour
     public Vector3 colStep;
 
     bool isSpawned = false;
-    Vector3 playerStart;
     List<GameObject> instances = new List<GameObject>();
 
     void Start()
     {
         if( spawnOnAwake )
             Spawn(input.text);
-    }
-
-    public Vector3 GetPlayerStart()
-    {
-        return playerStart;
     }
 
     public bool GetIsSpawned()
@@ -75,13 +69,9 @@ public class LevelSpawner : MonoBehaviour
 
             foreach( char c in line )
             {
-                Vector3 cellCenter = (row+0.5f)*rowStep + (col+0.5f)*colStep;
+                Vector3 cellCenter = transform.position + (row+0.5f)*rowStep + (col+0.5f)*colStep;
                 if( c == ignoreChar[0] )
                 {
-                }
-                else if( c == playerStartChar[0] )
-                {
-                    playerStart = cellCenter;
                 }
                 else
                 {
