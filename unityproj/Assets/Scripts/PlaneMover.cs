@@ -22,6 +22,7 @@ public class PlaneMover : MonoBehaviour
     void FixedUpdate()
     {
         float angleChange = Input.GetAxisRaw("Vertical");
+        //float stallFactor = Mathf.Clamp(Vector3.Dot(rigidbody.velocity, transform.right), 0, 1);
         rigidbody.AddTorque(new Vector3(0f, 0f, angleChange * angularSpeed));
 
         Vector3 move = transform.right * Mathf.Max(0, Input.GetAxisRaw("Horizontal") * throttle);
