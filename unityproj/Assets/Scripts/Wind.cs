@@ -18,8 +18,6 @@ public class Wind : MonoBehaviour
             // random turbulence force
             rb.AddTorque( Vector3.forward *
                     Mathf.Lerp( -maxTorque, maxTorque, Random.value ) );
-
-            Debug.Log("blowing "+other.gameObject.name);
         }
     }
 }

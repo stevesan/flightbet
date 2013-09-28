@@ -9,8 +9,9 @@ public class LevelGenerator : MonoBehaviour
 
     public int sizeX = 10;
     public int sizeY = 10;
-    public LevelSpawner backgroundSpawner;
+    public LevelSpawner terrainSpawner;
     public LevelSpawner objectsSpawner;
+    public LevelSpawner bgSpawner;
 
     public float terrainPerlinFreq = 0.1f;
     public float terrainMaxHeight = 5;
@@ -61,9 +62,16 @@ public class LevelGenerator : MonoBehaviour
         return grid;
     }
 
+    public void DestroyAll()
+    {
+        bgSpawner.DestroyAll();
+        objectsSpawner.DestroyAll();
+        terrainSpawner.DestroyAll();
+    }
+
     public void Generate()
     {
-        char bgEmptyChar = backgroundSpawner.ignoreChar[0];
+        char bgEmptyChar = terrainSpawner.ignoreChar[0];
         char[,] bgChars = CreateCharGrid( bgEmptyChar );
         int[] terrainHeight = new int[ sizeX ];
 
@@ -128,7 +136,7 @@ public class LevelGenerator : MonoBehaviour
         }
         */
 
-        backgroundSpawner.Spawn( GridToString(bgChars) );
+        terrainSpawner.Spawn( GridToString(bgChars) );
 
         //----------------------------------------
         //  Mines
@@ -175,6 +183,18 @@ public class LevelGenerator : MonoBehaviour
         }
 
         objectsSpawner.Spawn( GridToString(objectsChars) );
+
+        //----------------------------------------
+        //  TEMP
+        //----------------------------------------
+        Bounds b = GetBounds();
+        Debug.Log("min = "+b.min+" max = "+b.max);
     }
 
+    public Bounds GetBounds()
+    {
+        Bounds b = terrainSpawner.GetBounds();
+        Utility.GrowBounds( ref b, objectsSpawner.GetBounds() );
+        return b;
+    }
 }

@@ -25,6 +25,9 @@ public class LevelSpawner : MonoBehaviour
     bool isSpawned = false;
     List<GameObject> instances = new List<GameObject>();
 
+    int maxRow = 0;
+    int maxCol = 0;
+
     void Start()
     {
         if( spawnOnAwake )
@@ -54,6 +57,9 @@ public class LevelSpawner : MonoBehaviour
             Destroy(obj);
         }
         instances.Clear();
+
+        maxRow = 0;
+        maxCol = 0;
     }
     
     public void Spawn(string text)
@@ -84,6 +90,9 @@ public class LevelSpawner : MonoBehaviour
                     {
                         GameObject obj = Utility.Instantiate( prefab, cellCenter, transform );
                         instances.Add(obj);
+
+                        maxCol = Mathf.Max( maxCol, col );
+                        maxRow = Mathf.Max( maxRow, row );
                     }
                 }
 
@@ -94,5 +103,18 @@ public class LevelSpawner : MonoBehaviour
         }
 
         isSpawned = true;
+    }
+
+    public Bounds GetBounds()
+    {
+        Vector3 c0 = transform.position;
+        Vector3 c1 = transform.position + (maxRow+1)*rowStep;
+        Vector3 c2 = transform.position + (maxCol+1)*colStep;
+        Vector3 c3 = transform.position + (maxRow+1)*rowStep + (maxCol+1)*colStep;
+
+        Bounds b = new Bounds();
+        b.min = Vector3.Min( c0, Vector3.Min( c1, Vector3.Min( c2, c3 ) ) );
+        b.max = Vector3.Max( c0, Vector3.Max( c1, Vector3.Max( c2, c3 ) ) );
+        return b;
     }
 }

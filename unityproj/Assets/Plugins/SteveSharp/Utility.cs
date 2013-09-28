@@ -80,6 +80,12 @@ namespace SteveSharp
             float t = Unlerp( x0, x1, x );
             return Mathf.Lerp( y0, y1, t );
         }
+
+        public static void GrowBounds( ref Bounds b, Bounds other )
+        {
+            b.min = Vector3.Min( b.min, other.min );
+            b.max = Vector3.Max( b.max, other.max );
+        }
     }
 
 }
