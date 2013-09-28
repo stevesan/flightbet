@@ -283,6 +283,7 @@ MonoBehaviour:
   backWing: {fileID: 100006}
   propAnim: {fileID: 11400002}
   backWingMoveClip: {fileID: 8300000, guid: 3e63dd8b923b1421cb64520ee961311f, type: 3}
+  moveScale: 2
 --- !u!114 &11400002
 MonoBehaviour:
   m_ObjectHideFlags: 1

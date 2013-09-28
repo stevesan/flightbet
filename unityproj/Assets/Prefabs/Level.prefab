@@ -143,8 +143,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   genOnAwake: 1
-  sizeX: 50
-  sizeY: 50
+  sizeX: 100
+  sizeY: 25
   backgroundSpawner: {fileID: 11400004}
   objectsSpawner: {fileID: 11400006}
   terrainPerlinFreq: .100000001
@@ -154,7 +154,10 @@ MonoBehaviour:
   cloudPerlinThreshA: .699999988
   cloudPerlinThreshB: .200000003
   cloudYMin: 10
-  mineChance: .5
+  startMineChance: 0
+  endMineChance: .5
+  startWindChance: 0
+  endWindChance: .0500000007
   easyHoopChance: .100000001
 --- !u!114 &11400004
 MonoBehaviour:
@@ -171,12 +174,14 @@ MonoBehaviour:
   prefabMap:
   - character: g
     prefab: {fileID: 100002, guid: 31e2cbca381424a02b8e7a33d0d05c97, type: 2}
-  - character: b
-    prefab: {fileID: 100002, guid: 97415207cfb924932b6856f180c89e71, type: 2}
+  - character: l
+    prefab: {fileID: 100002, guid: 33f895994fedf4102a3227477805a3df, type: 2}
   - character: c
     prefab: {fileID: 100002, guid: 320bd88013c6f4e4cbeff0df0ff20be7, type: 2}
   - character: d
     prefab: {fileID: 100002, guid: 83e126db5c5fc4bc4ba545694bd4d2fa, type: 2}
+  - character: r
+    prefab: {fileID: 100002, guid: 006e0db2b7e264872b4422b4c7813cbe, type: 2}
   playerStartChar: s
   ignoreChar: .
   spawnOnAwake: 0
@@ -195,8 +200,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   input: {fileID: 0}
   prefabMap:
-  - character: g
-    prefab: {fileID: 100002, guid: 31e2cbca381424a02b8e7a33d0d05c97, type: 2}
+  - character: w
+    prefab: {fileID: 100000, guid: 46c4dccd3a0f7415ea1d03ed85263923, type: 2}
   - character: b
     prefab: {fileID: 100002, guid: 97415207cfb924932b6856f180c89e71, type: 2}
   - character: c
