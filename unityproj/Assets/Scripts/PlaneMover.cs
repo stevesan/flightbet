@@ -3,9 +3,10 @@ using System.Collections;
 
 public class PlaneMover : MonoBehaviour
 {
-    public float throttle = 100f;
+    public float throttle = 15f;
+    public float maxSpeed = 40f;
     public float angularSpeed = 2f;
-    public float liftSpeed = 0.5f;
+    public float liftSpeed = 14f;
 
     // Use this for initialization
 	void Start()
@@ -28,6 +29,11 @@ public class PlaneMover : MonoBehaviour
 
         Vector3 liftForce = new Vector3(0, Mathf.Clamp(Vector3.Dot(rigidbody.velocity, transform.right), 0, 1), 0);
         rigidbody.AddForce(liftForce * liftSpeed, ForceMode.Force);
+
+        if (rigidbody.velocity.magnitude > maxSpeed)
+        {
+            rigidbody.velocity = rigidbody.velocity.normalized * maxSpeed;
+        }
 
         CheckOnGround();
     }
