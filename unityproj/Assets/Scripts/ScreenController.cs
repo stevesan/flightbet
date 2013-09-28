@@ -6,6 +6,7 @@ public class ScreenController : MonoBehaviour
 {
     public GameObject gambleScreen;
     public GameObject flyScreen;
+    public LevelGenerator levelGenerator;
 
 	// Use this for initialization
 	void Start()
