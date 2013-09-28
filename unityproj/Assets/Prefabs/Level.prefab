@@ -41,6 +41,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 400004}
   - 114: {fileID: 11400000}
+  - 114: {fileID: 11400008}
   m_Layer: 0
   m_Name: Background
   m_TagString: Untagged
@@ -145,8 +146,9 @@ MonoBehaviour:
   genOnAwake: 1
   sizeX: 100
   sizeY: 25
-  backgroundSpawner: {fileID: 11400004}
+  terrainSpawner: {fileID: 11400004}
   objectsSpawner: {fileID: 11400006}
+  bgSpawner: {fileID: 11400000}
   terrainPerlinFreq: .100000001
   terrainMaxHeight: 10
   cloudPerlinXFreq: .100000001
@@ -215,6 +217,19 @@ MonoBehaviour:
   spawnOnAwake: 0
   rowStep: {x: 0, y: 4.80000019, z: 0}
   colStep: {x: 4.80000019, y: 0, z: 0}
+--- !u!114 &11400008
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100004}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d6de35cd45682498993c0d8eb8f76512, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 0}
+  offsetScale: .5
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

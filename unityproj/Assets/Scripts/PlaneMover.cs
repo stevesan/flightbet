@@ -12,14 +12,18 @@ public class PlaneMover : MonoBehaviour
     public ParticleSystem thrustFx;
     public GameObject backWing;
     public tk2dSpriteAnimator propAnim;
+    public tk2dSpriteAnimator explosionAnim;
     public AudioClip backWingMoveClip;
     public float moveScale = 1f;
 
-    private int prevBackWingSign = 0;
+    int prevBackWingSign = 0;
+
+    int hp = 2;
 
     // Use this for initialization
 	void Start()
     {
+        explosionAnim.gameObject.SetActive(false);
 	}
 
     void FixedUpdate()
@@ -68,5 +72,16 @@ public class PlaneMover : MonoBehaviour
         if( backWingSign != prevBackWingSign )
             AudioSource.PlayClipAtPoint( backWingMoveClip, transform.position );
         prevBackWingSign = backWingSign;
+    }
+
+    void OnCollisionEnter( Collision col )
+    {
+        hp--;
+
+        if( hp <= 0 )
+        {
+            explosionAnim.gameObject.SetActive(false);
+            explosionAnim.Play();
+        }
     }
 }
