@@ -318,7 +318,7 @@ ParticleSystem:
   randomSeed: 0
   looping: 1
   prewarm: 0
-  playOnAwake: 1
+  playOnAwake: 0
   moveWithTransform: 0
   InitialModule:
     enabled: 1
@@ -1462,6 +1462,7 @@ GameObject:
   - 65: {fileID: 1012563580}
   - 54: {fileID: 1012563579}
   - 114: {fileID: 1012563584}
+  - 82: {fileID: 1012563583}
   m_Layer: 0
   m_Name: Plane
   m_TagString: Untagged
@@ -1496,7 +1497,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 2.8900001, y: 2.20000005, z: 1}
+  m_Size: {x: 9.25, y: 3.22000003, z: 8.71000004}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!33 &1012563581
 MeshFilter:
@@ -1519,6 +1520,65 @@ Transform:
   - {fileID: 734198672}
   - {fileID: 680405795}
   m_Father: {fileID: 0}
+--- !u!82 &1012563583
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 8200000, guid: f1897263133dfa049b6f844a38edf13a,
+    type: 2}
+  m_PrefabInternal: {fileID: 2067135447}
+  m_GameObject: {fileID: 1012563578}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_audioClip: {fileID: 8300000, guid: 6da819fd8f9ca45feac31088ffc3bebf, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 1
+  Mute: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
 --- !u!114 &1012563584
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1533,8 +1593,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   throttle: 15
   maxSpeed: 30
-  angularSpeed: 2
+  angularSpeed: 4
   liftSpeed: 14
+  thrustAudio: {fileID: 1012563583}
+  thrustFx: {fileID: 734198671}
 --- !u!1 &1166314843
 GameObject:
   m_ObjectHideFlags: 0
@@ -1609,8 +1671,8 @@ MonoBehaviour:
     prefab: {fileID: 100002, guid: 97415207cfb924932b6856f180c89e71, type: 2}
   - character: c
     prefab: {fileID: 100002, guid: 320bd88013c6f4e4cbeff0df0ff20be7, type: 2}
-  - character: m
-    prefab: {fileID: 100002, guid: ddf369c7a957447eab1d3c6517f45955, type: 2}
+  - character: d
+    prefab: {fileID: 100002, guid: 83e126db5c5fc4bc4ba545694bd4d2fa, type: 2}
   playerStartChar: s
   ignoreChar: .
   spawnOnAwake: 0
@@ -1814,6 +1876,10 @@ Prefab:
     - target: {fileID: 3300000, guid: f1897263133dfa049b6f844a38edf13a, type: 2}
       propertyPath: m_Mesh
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: f1897263133dfa049b6f844a38edf13a, type: 2}
+      propertyPath: angularSpeed
+      value: 4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f1897263133dfa049b6f844a38edf13a, type: 2}
