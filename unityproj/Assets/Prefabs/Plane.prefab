@@ -276,7 +276,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   throttle: 20
   maxSpeed: 30
-  angularSpeed: 6
+  angularSpeed: 10
   liftSpeed: 14
   thrustAudio: {fileID: 8200000}
   thrustFx: {fileID: 19800000}

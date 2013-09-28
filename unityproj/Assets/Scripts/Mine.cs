@@ -28,8 +28,11 @@ public class Mine : MonoBehaviour
 
     void OnCollisionEnter( Collision col )
     {
-        Utility.Instantiate( explodeFx, transform.position );
-        AudioSource.PlayClipAtPoint( explodeClip, transform.position );
-        Destroy(gameObject);
+        if( col.gameObject.GetComponent<Piloted>() != null )
+        {
+            Utility.Instantiate( explodeFx, transform.position );
+            AudioSource.PlayClipAtPoint( explodeClip, transform.position );
+            Destroy(gameObject);
+        }
     }
 }
