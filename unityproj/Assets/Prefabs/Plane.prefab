@@ -282,7 +282,7 @@ MonoBehaviour:
   thrustFx: {fileID: 19800000}
   backWing: {fileID: 100006}
   propAnim: {fileID: 11400002}
-  backWingMoveClip: {fileID: 0}
+  backWingMoveClip: {fileID: 8300000, guid: 3e63dd8b923b1421cb64520ee961311f, type: 3}
 --- !u!114 &11400002
 MonoBehaviour:
   m_ObjectHideFlags: 1

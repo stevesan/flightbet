@@ -60,7 +60,8 @@ public class LevelGenerator : MonoBehaviour
 
     public void Generate()
     {
-        char[,] bgChars = CreateCharGrid( backgroundSpawner.ignoreChar[0] );
+        char bgEmptyChar = backgroundSpawner.ignoreChar[0];
+        char[,] bgChars = CreateCharGrid( bgEmptyChar );
         int[] terrainHeight = new int[ sizeX ];
 
         //----------------------------------------
@@ -77,6 +78,27 @@ public class LevelGenerator : MonoBehaviour
             for( int y = 0; y < yMax; y++ )
                 bgChars[x,y] = 'd';
             bgChars[x, yMax] = 'g';
+        }
+
+        // Figure out which ones should be slope tiles
+        for( int x = 1; x < sizeX-1; x++ )
+        {
+            int y = terrainHeight[x];
+            bool leftFilled = bgChars[x-1, y] != bgEmptyChar;
+            bool rightFilled = bgChars[x+1, y] != bgEmptyChar;
+
+            if( !leftFilled && rightFilled )
+            {
+                bgChars[x, y] = 'l';
+                if( y-1 >= 0 )
+                    bgChars[x, y-1] = 'd';
+            }
+            else if( leftFilled && !rightFilled )
+            {
+                bgChars[x, y] = 'r';
+                if( y-1 >= 0 )
+                    bgChars[x, y-1] = 'd';
+            }
         }
 
         //----------------------------------------
