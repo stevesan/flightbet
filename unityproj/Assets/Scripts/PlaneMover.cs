@@ -13,6 +13,7 @@ public class PlaneMover : MonoBehaviour
     public GameObject backWing;
     public tk2dSpriteAnimator propAnim;
     public AudioClip backWingMoveClip;
+    public float moveScale = 1f;
 
     private int prevBackWingSign = 0;
 
@@ -32,7 +33,7 @@ public class PlaneMover : MonoBehaviour
 
 
         float negativeVelocityRightDot = Mathf.Clamp(velocityRightDot, -1, 0);
-        Vector3 move = transform.right * Mathf.Max(0, Input.GetAxisRaw("Fire1") * (throttle - (throttle * negativeVelocityRightDot)));
+        Vector3 move = moveScale * transform.right * Mathf.Max(0, Input.GetAxisRaw("Fire1") * (throttle - (throttle * negativeVelocityRightDot)));
         rigidbody.AddForce(move, ForceMode.Force);
 
         float liftForce = normalizedVelocityRightDot;

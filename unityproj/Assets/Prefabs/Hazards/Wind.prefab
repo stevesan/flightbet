@@ -41,6 +41,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 400004}
   - 65: {fileID: 6500000}
+  - 114: {fileID: 11400000}
   m_Layer: 0
   m_Name: collider
   m_TagString: Untagged
@@ -93,8 +94,20 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 100, y: 50, z: 50}
+  m_Size: {x: 100, y: 25, z: 50}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100004}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 22e7e8634e3e54cb699d09449ef9159b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  force: {x: -2, y: 0, z: 0}
 --- !u!198 &19800000
 ParticleSystem:
   m_ObjectHideFlags: 1
@@ -347,7 +360,7 @@ ParticleSystem:
     radius: 1
     angle: 25
     length: 5
-    boxX: 50
+    boxX: 25
     boxY: 1
     boxZ: 50
     placementMode: 0

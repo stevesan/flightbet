@@ -21,7 +21,10 @@ public class LevelGenerator : MonoBehaviour
     public float cloudPerlinThreshB = 0.2f;
     public int cloudYMin = 5;
 
-    public float mineChance = 0.1f;
+    public float startMineChance = 0.1f;
+    public float endMineChance = 0.5f;
+    public float startWindChance = 0.1f;
+    public float endWindChance = 0.5f;
 
     public float easyHoopChance = 0.025f;
 
@@ -104,6 +107,7 @@ public class LevelGenerator : MonoBehaviour
         //----------------------------------------
         //  Clouds
         //----------------------------------------
+        /*
         for( int x = 0; x < sizeX; x++ )
         {
             for( int y = cloudYMin; y < sizeY; y++ )
@@ -122,6 +126,7 @@ public class LevelGenerator : MonoBehaviour
                 }
             }
         }
+        */
 
         backgroundSpawner.Spawn( GridToString(bgChars) );
 
@@ -132,11 +137,27 @@ public class LevelGenerator : MonoBehaviour
 
         for( int x = 0; x < sizeX; x++ )
         {
+            int yMin = terrainHeight[x] + 1;
+
+            float mineChance = Utility.LinearMap( 0, sizeX, startMineChance, endMineChance, x );
             if( Random.value < mineChance )
             {
-                int yMin = terrainHeight[x] + 1;
                 int y = Mathf.FloorToInt( Mathf.Lerp( yMin, sizeY, Random.value ) );
                 objectsChars[x, y] = 'm';
+            }
+
+            float windChance = Utility.LinearMap( 0, sizeX, startWindChance, endWindChance, x );
+            if( Random.value < windChance )
+            {
+                while(true)
+                {
+                    int y = Mathf.FloorToInt( Mathf.Lerp( yMin, sizeY, Random.value ) );
+                    if( objectsChars[x,y] == objectsSpawner.ignoreChar[0] )
+                    {
+                        objectsChars[x,y] = 'w';
+                        break;
+                    }
+                }
             }
         }
 
