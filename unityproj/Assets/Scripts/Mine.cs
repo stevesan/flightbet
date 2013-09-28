@@ -5,6 +5,7 @@ using SteveSharp;
 public class Mine : MonoBehaviour
 {
     public GameObject explodeFx;
+    public AudioClip explodeClip;
 
 	// Use this for initialization
 	void Start () {
@@ -19,6 +20,7 @@ public class Mine : MonoBehaviour
     void OnCollisionEnter( Collision col )
     {
         Utility.Instantiate( explodeFx, transform.position );
+        AudioSource.PlayClipAtPoint( explodeClip, transform.position );
         Destroy(gameObject);
     }
 }

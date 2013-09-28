@@ -7,6 +7,8 @@ public class PlaneMover : MonoBehaviour
     public float maxSpeed = 40f;
     public float angularSpeed = 2f;
     public float liftSpeed = 14f;
+    public AudioSource thrustAudio;
+    public ParticleSystem thrustFx;
 
     // Use this for initialization
 	void Start()
@@ -37,5 +39,16 @@ public class PlaneMover : MonoBehaviour
         }
 
         CheckOnGround();
+
+        if( move.magnitude > 1e-2 && !thrustAudio.isPlaying )
+        {
+            thrustAudio.Play();
+            thrustFx.Play();
+        }
+        else if( move.magnitude <= 1e-2 && thrustAudio.isPlaying )
+        {
+            thrustAudio.Stop();
+            thrustFx.Stop();
+        }
     }
 }

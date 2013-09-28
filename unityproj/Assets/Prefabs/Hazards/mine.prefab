@@ -127,6 +127,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   explodeFx: {fileID: 100000, guid: 286f433143e7d4ad09beb6f8560ff988, type: 2}
+  explodeClip: {fileID: 8300000, guid: a943c8554cf9d4344937c903d3ae41aa, type: 3}
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
