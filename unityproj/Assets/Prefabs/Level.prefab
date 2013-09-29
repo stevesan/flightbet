@@ -101,11 +101,9 @@ MonoBehaviour:
   objectsSpawner: {fileID: 11400006}
   terrainPerlinFreq: .100000001
   terrainMaxHeight: 10
-  cloudPerlinXFreq: .100000001
-  cloudPerlinYFreq: .300000012
-  cloudPerlinThreshA: .699999988
-  cloudPerlinThreshB: .200000003
-  cloudYMin: 10
+  cloudChanceMin: .5
+  cloudChanceMax: .200000003
+  cloudMinY: 10
   startMineChance: 0
   endMineChance: .5
   startWindChance: 0
@@ -134,6 +132,18 @@ MonoBehaviour:
     prefab: {fileID: 100002, guid: 83e126db5c5fc4bc4ba545694bd4d2fa, type: 2}
   - character: r
     prefab: {fileID: 100002, guid: 006e0db2b7e264872b4422b4c7813cbe, type: 2}
+  - character: 1
+    prefab: {fileID: 100002, guid: f47db66dfd391454893bdc5a28955557, type: 2}
+  - character: 2
+    prefab: {fileID: 100002, guid: 1e09eb283cc03402e98d89312b0d373e, type: 2}
+  - character: 7
+    prefab: {fileID: 100002, guid: 8f1302d27b63341fc87380e1530b70de, type: 2}
+  - character: 8
+    prefab: {fileID: 100000, guid: a530e9c40884043bf9d7e555569aaffd, type: 2}
+  - character: 9
+    prefab: {fileID: 100002, guid: 9651df84516e2482690f09c0e7cbec35, type: 2}
+  - character: 0
+    prefab: {fileID: 100000, guid: 8357d023e5263470c806e78243f0bba2, type: 2}
   playerStartChar: s
   ignoreChar: .
   spawnOnAwake: 0

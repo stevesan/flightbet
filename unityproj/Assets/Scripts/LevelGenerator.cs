@@ -15,11 +15,9 @@ public class LevelGenerator : MonoBehaviour
     public float terrainPerlinFreq = 0.1f;
     public float terrainMaxHeight = 5;
 
-    public float cloudPerlinXFreq = 0.1f;
-    public float cloudPerlinYFreq = 0.1f;
-    public float cloudPerlinThreshA = 0.5f;
-    public float cloudPerlinThreshB = 0.2f;
-    public int cloudYMin = 5;
+    public float cloudChanceMin = 0.5f;
+    public float cloudChanceMax = 0.2f;
+    public int cloudMinY = 10;
 
     public float startMineChance = 0.1f;
     public float endMineChance = 0.5f;
@@ -130,6 +128,26 @@ public class LevelGenerator : MonoBehaviour
         }
 
         //----------------------------------------
+        //  Clouds
+        //----------------------------------------
+        for( int x = 1; x < sizeX-1; x++ )
+        {
+            for( int y = Mathf.Max( cloudMinY, terrainHeight[x]+1 ); y < sizeY; y++ )
+            {
+                float chance = Utility.LinearMap(
+                        cloudMinY, sizeY,
+                        cloudChanceMin, cloudChanceMax,
+                        y );
+
+                if( Random.value < chance )
+                {
+                    char[] cloudChars = { '7', '8', '9', '0' };
+                    terrainChars[x, y] = cloudChars[ Random.Range( 0, 4 ) ];
+                }
+            }
+        }
+
+        //----------------------------------------
         //  Fill the top with solid ground so the plane doesn't leave
         //----------------------------------------
         for( int x = 0; x < sizeX; x++ )
@@ -202,11 +220,11 @@ public class LevelGenerator : MonoBehaviour
         //----------------------------------------
         //  Easy Hoops
         //----------------------------------------
-        for( int x = 0; x < sizeX; x++ )
+        for( int x = 10; x < sizeX; x++ )
         {
             if( Random.value < easyHoopChance )
             {
-                int yMin = terrainHeight[x] + 1;
+                int yMin = terrainHeight[x] + 3;
                 int y = Mathf.FloorToInt( Mathf.Lerp( yMin, sizeY, Random.value ) );
                 objectsChars[x, y] = 'e';
             }
