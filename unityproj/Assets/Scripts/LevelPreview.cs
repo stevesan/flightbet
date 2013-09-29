@@ -32,4 +32,10 @@ public class LevelPreview : MonoBehaviour
 	    	screenCamera.transform.position = new Vector3(levelBounds.center.x, levelBounds.center.y, screenCamera.transform.position.z);
     	}
 	}
+
+	void OnDisable()
+	{
+		Time.timeScale = 1.0f;
+		initialUpdate = false;
+	}
 }

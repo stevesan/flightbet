@@ -55,7 +55,7 @@ public class GambleMover : MonoBehaviour
             payoff.SetActive(false);
             betAmount.SetActive(true);
             winAmount.SetActive(true);
-            Globals.playerBetPos[playerIndex - 1] = posPercent;
+            Globals.playerBetPos[playerIndex - 1] = Camera.main.ViewportToWorldPoint(new Vector3(posPercent, 0, 0)).x;
             gambleMode = GambleMode.Cash;
         }
     }

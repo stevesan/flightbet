@@ -1,3 +1,4 @@
+using UnityEngine;
 
 public class Globals
 {
@@ -13,4 +14,5 @@ public class Globals
 	public static int activePilotPlayerIndex = -1;
 	public static float[] playerBetPos = new float[maxPlayers];
 	public static float[] playerBetAmount = new float[maxPlayers];
+	public static Color[] playerColors = new Color[maxPlayers];
 }

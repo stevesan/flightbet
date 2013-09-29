@@ -18,7 +18,11 @@ public class ScreenController : MonoBehaviour
 	// Update is called once per frame
 	void Update()
     {
-	   //flyScreen.active = true;
-       //gambleScreen.active = false;
 	}
+
+    public void StartFlying()
+    {
+        flyScreen.SetActive(true);
+        gambleScreen.SetActive(false);
+    }
 }

@@ -426,7 +426,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100018}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 25, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 400014}
@@ -1002,6 +1002,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   joinedPlayerPrefab: {fileID: 100002, guid: ad797fc5714681b47b5722be0f2c0b82, type: 2}
   parentScreen: {fileID: 100016}
+  playersHUD: {fileID: 0}
   playerColors:
   - {r: 0, g: 1, b: 0, a: 1}
   - {r: 1, g: 0, b: 0, a: 1}
@@ -1053,7 +1054,6 @@ MonoBehaviour:
   sizeY: 50
   terrainSpawner: {fileID: 0}
   objectsSpawner: {fileID: 11400006}
-  bgSpawner: {fileID: 0}
   terrainPerlinFreq: .100000001
   terrainMaxHeight: 10
   cloudPerlinXFreq: .100000001
@@ -1105,9 +1105,14 @@ MonoBehaviour:
   thrustFx: {fileID: 19800000}
   backWing: {fileID: 100002}
   propAnim: {fileID: 11400012}
-  explosionAnim: {fileID: 0}
+  deadPlane: {fileID: 0}
+  alivePlane: {fileID: 0}
+  damageFx: {fileID: 0}
+  dieFx: {fileID: 0}
   backWingMoveClip: {fileID: 0}
   moveScale: 1
+  gracePeriod: 1
+  playerCamera: {fileID: 0}
 --- !u!114 &11400020
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1146,7 +1151,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 400028}
+  limitsRef: {fileID: 0}
+  limitsMin: {x: 0, y: 0, z: 0}
+  limitsMax: {x: 0, y: 0, z: 0}
   smoothTime: .100000001
+  maxShakeOffset: {x: 0, y: 0, z: 0}
+  shakeDuration: 1
 --- !u!114 &11400024
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1160,6 +1170,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelGenerator: {fileID: 11400014}
   screenCamera: {fileID: 2000000}
+  placeYourBetsText: {fileID: 0}
 --- !u!124 &12400000
 Behaviour:
   m_ObjectHideFlags: 1

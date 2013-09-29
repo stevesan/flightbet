@@ -99,6 +99,7 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
+  - {fileID: 859840665}
   - {fileID: 424467900}
   - {fileID: 960706737}
   - {fileID: 561551408}
@@ -146,8 +147,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   genOnAwake: 1
-  sizeX: 100
-  sizeY: 25
+  sizeX: 200
+  sizeY: 28
   terrainSpawner: {fileID: 1757255282}
   objectsSpawner: {fileID: 1115569768}
   terrainPerlinFreq: .100000001
@@ -171,11 +172,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 400004, guid: f1897263133dfa049b6f844a38edf13a, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 400004, guid: f1897263133dfa049b6f844a38edf13a, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 80.3033829
+      value: 80
       objectReference: {fileID: 0}
     - target: {fileID: 400004, guid: f1897263133dfa049b6f844a38edf13a, type: 2}
       propertyPath: m_LocalPosition.z
@@ -208,10 +209,6 @@ Prefab:
     - target: {fileID: 3300000, guid: f1897263133dfa049b6f844a38edf13a, type: 2}
       propertyPath: m_Mesh
       value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 11400008, guid: f1897263133dfa049b6f844a38edf13a, type: 2}
-      propertyPath: _spriteId
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 11400000, guid: f1897263133dfa049b6f844a38edf13a, type: 2}
       propertyPath: playerCamera
@@ -1496,6 +1493,110 @@ GUIText:
     rgba: 4294967295
   m_PixelCorrect: 1
   m_RichText: 1
+--- !u!1 &833932156
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 833932157}
+  - 114: {fileID: 833932158}
+  m_Layer: 0
+  m_Name: GoalSpawner
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &833932157
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 833932156}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: -.200000003, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 2001363234}
+--- !u!114 &833932158
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 833932156}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f1b49e1f918986644a1a3576837b1417, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  goalPrefab: {fileID: 100000, guid: cd04994e62550cd45ba210a827a7bdd7, type: 2}
+--- !u!1 &859840664
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 859840665}
+  - 132: {fileID: 859840666}
+  - 114: {fileID: 859840667}
+  m_Layer: 0
+  m_Name: Countdown
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &859840665
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 859840664}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: .5, y: .920000017, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 181289898}
+--- !u!132 &859840666
+GUIText:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 859840664}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Text: 
+  m_Anchor: 4
+  m_Alignment: 1
+  m_PixelOffset: {x: 0, y: 0}
+  m_LineSpacing: 1
+  m_TabSize: 4
+  m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+  m_Material: {fileID: 0}
+  m_FontSize: 64
+  m_FontStyle: 0
+  m_Color:
+    serializedVersion: 2
+    rgba: 4278190335
+  m_PixelCorrect: 1
+  m_RichText: 1
+--- !u!114 &859840667
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 859840664}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9440b6f93a00e0b48954009d1bd7a098, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  countdownText: {fileID: 859840666}
+  screenController: {fileID: 878875561}
+  countdownTime: 15
 --- !u!1 &878875559
 GameObject:
   m_ObjectHideFlags: 0
@@ -2132,7 +2233,7 @@ MonoBehaviour:
   collection: {fileID: 11400000, guid: fcf9f8695e7374bc1aa4558c7b2c3b4c, type: 2}
   _color: {r: 1, g: 1, b: 1, a: 1}
   _scale: {x: 1, y: 1, z: 1}
-  _spriteId: 0
+  _spriteId: 33
   boxCollider: {fileID: 0}
   meshCollider: {fileID: 0}
   meshColliderPositions: []
@@ -2315,8 +2416,8 @@ MonoBehaviour:
     prefab: {fileID: 100002, guid: 31e2cbca381424a02b8e7a33d0d05c97, type: 2}
   - character: l
     prefab: {fileID: 100002, guid: 33f895994fedf4102a3227477805a3df, type: 2}
-  - character: c
-    prefab: {fileID: 100002, guid: 320bd88013c6f4e4cbeff0df0ff20be7, type: 2}
+  - character: t
+    prefab: {fileID: 100002, guid: edc5f926b463f411b8e04d1130ccb43f, type: 2}
   - character: d
     prefab: {fileID: 100002, guid: 83e126db5c5fc4bc4ba545694bd4d2fa, type: 2}
   - character: r
@@ -2402,7 +2503,7 @@ Transform:
   m_PrefabInternal: {fileID: 394935947}
   m_GameObject: {fileID: 1924159098}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 80.3033829, z: 0}
+  m_LocalPosition: {x: 10, y: 80, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 529214515}
@@ -2503,7 +2604,8 @@ MonoBehaviour:
   propAnim: {fileID: 1161679521}
   deadPlane: {fileID: 1371336614}
   alivePlane: {fileID: 1161679520}
-  damageFx: {fileID: 100000, guid: c98e323c7b4f344c084238edc9c5d66c, type: 2}
+  damageFx: {fileID: 100000, guid: f90b173538ae748cfa6f09bd09284be8, type: 2}
+  dieFx: {fileID: 100000, guid: c98e323c7b4f344c084238edc9c5d66c, type: 2}
   backWingMoveClip: {fileID: 8300000, guid: 3e63dd8b923b1421cb64520ee961311f, type: 3}
   moveScale: 2
   gracePeriod: 1
@@ -2834,8 +2936,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: {fileID: 1924159099}
   limitsRef: {fileID: 353021853}
-  minY: 50
-  maxY: 100
+  limitsMin: {x: 80, y: 50, z: -99999}
+  limitsMax: {x: 1000, y: 100, z: 99999}
   smoothTime: .100000001
   maxShakeOffset: {x: 7, y: 7, z: 0}
   shakeDuration: 1
@@ -2931,6 +3033,7 @@ Transform:
   m_Children:
   - {fileID: 1058065268}
   - {fileID: 1997719540}
+  - {fileID: 833932157}
   - {fileID: 1971950956}
   - {fileID: 1924159099}
   m_Father: {fileID: 878875560}

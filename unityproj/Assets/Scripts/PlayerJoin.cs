@@ -35,6 +35,7 @@ public class PlayerJoin : MonoBehaviour
     		if (!GetPlayerJoined(p) && Input.GetAxisRaw("P" + p + "Accel") > 0.5f)
     		{
     			Globals.playerMoney[p - 1] = Globals.startingMoney;
+    			Globals.playerColors[p - 1] = playerColors[p - 1];
     			if (Globals.activePilotPlayerIndex <= 0)
     			{
     				Globals.activePilotPlayerIndex = p;

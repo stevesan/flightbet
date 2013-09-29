@@ -6,20 +6,29 @@ using SteveSharp;
 public class BetCountdown : MonoBehaviour
 {
 	public GUIText countdownText;
-	public float countdownTime;
+	public ScreenController screenController;
+	public double countdownTime = 15;
 
-	private float timeLeft;
-	
+	private double startTime = -1;
+
     // Use this for initialization
 	void Start()
     {
-    	timeLeft = countdownTime;
 	}
 	
 	// Update is called once per frame
 	void Update()
     {
-    	timeLeft -= 0.01f;
+    	if (startTime < 0)
+    	{
+    		startTime = Utility.GetSystemTime();
+    	}
+    	double timeLeft = countdownTime - ((Utility.GetSystemTime() - startTime) / 1000);
     	countdownText.text = timeLeft.ToString("0.");
+
+    	if (timeLeft <= 0)
+    	{
+    		screenController.StartFlying();
+    	}
 	}
 }
