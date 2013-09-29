@@ -9,4 +9,6 @@ public class Globals
 
 	public static float startingMoney = 100;
 	public static float[] playerMoney = new float[maxPlayers];
+	public static int numPlayers = 0;
+	public static int activePilotPlayerIndex = -1;
 }

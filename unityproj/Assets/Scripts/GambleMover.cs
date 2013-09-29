@@ -4,8 +4,8 @@ using System.Collections;
 public class GambleMover : MonoBehaviour
 {
     private int playerIndex = 0;
-    private float minX = 0.3f;
-    private float maxX = 0.8f;
+    private float minX = 0.25f;
+    private float maxX = 0.75f;
     private enum GambleMode { Dist, Cash, Ready };
     private GambleMode gambleMode = GambleMode.Dist;
     private bool selectButtonReleased = false;
@@ -26,6 +26,7 @@ public class GambleMover : MonoBehaviour
     public void SetPlayerIndex(int setIndex)
     {
         playerIndex = setIndex;
+        betAmountMoney = Globals.playerMoney[playerIndex - 1] / 2;
     }
 
     private float CalcPosPercent()
@@ -34,7 +35,7 @@ public class GambleMover : MonoBehaviour
         float clampedX = Mathf.Clamp(pos.x, minX, maxX);
         this.transform.position = new Vector3(clampedX, pos.y, pos.z);
 
-        return (clampedX + Mathf.Abs(minX)) / (maxX - minX);
+        return (clampedX - Mathf.Abs(minX)) / (maxX - minX);
     }
 
     private void UpdateDist()
@@ -47,7 +48,7 @@ public class GambleMover : MonoBehaviour
 
         float posPercent = CalcPosPercent();
         float gamblePayoffPercent = Globals.CalculatePayoffPercent(posPercent);
-        payoff.GetComponent<TextMesh>().text = (gamblePayoffPercent * 100f).ToString("0.") + "%";
+        payoff.GetComponent<GUIText>().text = (gamblePayoffPercent * 100f).ToString("0.") + "%";
 
         if (selectButtonReleased && Input.GetAxisRaw("P" + playerIndex + "Accel") > 0.5f)
         {
@@ -71,7 +72,7 @@ public class GambleMover : MonoBehaviour
 
         float posPercent = CalcPosPercent();
         float winAmountMoney = betAmountMoney * Globals.CalculatePayoffPercent(posPercent);
-        winAmount.GetComponent<TextMesh>().text = "+$" + (winAmountMoney).ToString("0.");
+        winAmount.GetComponent<GUIText>().text = "+$" + (winAmountMoney).ToString("0.");
 
         if (selectButtonReleased && Input.GetAxisRaw("P" + playerIndex + "Accel") > 0.5f)
         {

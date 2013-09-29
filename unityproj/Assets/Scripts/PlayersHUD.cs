@@ -14,4 +14,9 @@ public class PlayersHUD : MonoBehaviour
 	void Update()
     {
 	}
+
+	public void OnPlayerAdded(int newPlayerIndex)
+	{
+        Debug.Log("Player added " + newPlayerIndex);
+    }
 }
