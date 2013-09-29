@@ -101,9 +101,9 @@ MonoBehaviour:
   objectsSpawner: {fileID: 11400006}
   terrainPerlinFreq: .100000001
   terrainMaxHeight: 10
-  cloudChanceMin: .5
-  cloudChanceMax: .200000003
-  cloudMinY: 10
+  cloudChanceMin: 0
+  cloudChanceMax: .100000001
+  cloudMinY: 15
   startMineChance: 0
   endMineChance: .5
   startWindChance: 0
