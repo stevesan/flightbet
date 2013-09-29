@@ -12,23 +12,40 @@ public class PlaneMover : MonoBehaviour
     public ParticleSystem thrustFx;
     public GameObject backWing;
     public tk2dSpriteAnimator propAnim;
+    public GameObject deadPlane;
+    public GameObject alivePlane;
     public GameObject damageFx;
     public AudioClip backWingMoveClip;
     public float moveScale = 1f;
     public float gracePeriod = 1f;
 
+    public FollowCamera playerCamera;
     public GameEvent gameOverEvent = new GameEvent();
 
     int prevBackWingSign = 0;
     float graceTimer = 0;
+    bool isDead = false;
+
+    public void Reset()
+    {
+        deadPlane.SetActive(false);
+        alivePlane.SetActive(true);
+        isDead = false;
+        graceTimer = 0;
+        prevBackWingSign = 0;
+    }
 
     // Use this for initialization
 	void Start()
     {
+        Reset();
 	}
 
     void FixedUpdate()
     {
+        if( isDead )
+            return;
+
         float speedFrac = rigidbody.velocity.magnitude / maxSpeed;
         float velocityRightDot = Vector3.Dot(rigidbody.velocity, transform.right);
         float normalizedVelocityRightDot = Vector3.Dot(rigidbody.velocity.normalized, transform.right);
@@ -94,12 +111,17 @@ public class PlaneMover : MonoBehaviour
             // game over!
             Utility.Instantiate( damageFx, transform.position );
             gameOverEvent.Trigger(this);
+            playerCamera.TriggerShake();
+            isDead = true;
+            deadPlane.SetActive(true);
+            alivePlane.SetActive(false);
+            Debug.Log("game over");
         }
         else if( graceTimer < 0 )
         {
             Utility.Instantiate( damageFx, transform.position );
             graceTimer = gracePeriod;
-
+            playerCamera.TriggerShake();
         }
     }
 }
