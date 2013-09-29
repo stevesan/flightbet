@@ -4,8 +4,8 @@ using System.Collections;
 public class GambleMover : MonoBehaviour
 {
     private int playerIndex = 0;
-    private float minX = 0.25f;
-    private float maxX = 0.75f;
+    private float minX = 0.03f;
+    private float maxX = 0.97f;
     private enum GambleMode { Dist, Cash, Ready };
     private GambleMode gambleMode = GambleMode.Dist;
     private bool selectButtonReleased = false;
@@ -55,6 +55,7 @@ public class GambleMover : MonoBehaviour
             payoff.SetActive(false);
             betAmount.SetActive(true);
             winAmount.SetActive(true);
+            Globals.playerBetPos[playerIndex - 1] = posPercent;
             gambleMode = GambleMode.Cash;
         }
     }
@@ -79,6 +80,7 @@ public class GambleMover : MonoBehaviour
             payoff.SetActive(false);
             betAmount.SetActive(true);
             winAmount.SetActive(true);
+            Globals.playerBetAmount[playerIndex - 1] = betAmountMoney;
             gambleMode = GambleMode.Ready;
         }
     }

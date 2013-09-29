@@ -30,14 +30,14 @@ public class PlayerJoin : MonoBehaviour
 	// Update is called once per frame
 	void Update()
     {
-    	for (int p = 1; p <= 6; p++)
+    	for (int p = 1; p <= Globals.maxPlayers; p++)
     	{
     		if (!GetPlayerJoined(p) && Input.GetAxisRaw("P" + p + "Accel") > 0.5f)
     		{
     			Globals.playerMoney[p - 1] = Globals.startingMoney;
     			if (Globals.activePilotPlayerIndex <= 0)
     			{
-
+    				Globals.activePilotPlayerIndex = p;
     			}
     			else
     			{

@@ -11,4 +11,6 @@ public class Globals
 	public static float[] playerMoney = new float[maxPlayers];
 	public static int numPlayers = 0;
 	public static int activePilotPlayerIndex = -1;
+	public static float[] playerBetPos = new float[maxPlayers];
+	public static float[] playerBetAmount = new float[maxPlayers];
 }
