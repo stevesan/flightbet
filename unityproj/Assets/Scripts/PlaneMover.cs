@@ -17,10 +17,10 @@ public class PlaneMover : MonoBehaviour
     public float moveScale = 1f;
     public float gracePeriod = 1f;
 
+    public GameEvent gameOverEvent = new GameEvent();
+
     int prevBackWingSign = 0;
     float graceTimer = 0;
-
-    int hp = 2;
 
     // Use this for initialization
 	void Start()
@@ -89,10 +89,17 @@ public class PlaneMover : MonoBehaviour
 
     void OnCollisionEnter( Collision col )
     {
-        if( graceTimer < 0 )
+        if( col.gameObject.GetComponent<Ground>() != null )
+        {
+            // game over!
+            Utility.Instantiate( damageFx, transform.position );
+            gameOverEvent.Trigger(this);
+        }
+        else if( graceTimer < 0 )
         {
             Utility.Instantiate( damageFx, transform.position );
             graceTimer = gracePeriod;
+
         }
     }
 }
