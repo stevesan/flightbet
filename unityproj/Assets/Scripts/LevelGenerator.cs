@@ -111,6 +111,25 @@ public class LevelGenerator : MonoBehaviour
         }
 
         //----------------------------------------
+        //  Treeeees
+        //----------------------------------------
+        for( int x = 1; x < sizeX-1; x++ )
+        {
+            int y = terrainHeight[x]+1;
+
+            if( Random.value < 0.2f )
+            {
+                if( terrainChars[x,y-1] == 'g' )
+                    terrainChars[x,y] = '1';
+            }
+            else if( Random.value < 0.2f )
+            {
+                if( terrainChars[x,y-1] == 'g' )
+                    terrainChars[x,y] = '2';
+            }
+        }
+
+        //----------------------------------------
         //  Fill the top with solid ground so the plane doesn't leave
         //----------------------------------------
         for( int x = 0; x < sizeX; x++ )
