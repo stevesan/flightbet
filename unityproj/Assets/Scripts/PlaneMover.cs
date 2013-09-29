@@ -20,6 +20,8 @@ public class PlaneMover : MonoBehaviour
     public float moveScale = 1f;
     public float gracePeriod = 1f;
 
+    public bool debugControls = false;
+
     public FollowCamera playerCamera;
     public GameEvent gameOverEvent = new GameEvent();
 
@@ -53,6 +55,14 @@ public class PlaneMover : MonoBehaviour
     {
         if( isDead )
             return;
+
+        if( debugControls )
+        {
+            Vector3 move = new Vector3( Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"), 0f );
+            rigidbody.AddForce( move*100, ForceMode.Acceleration );
+        }
+        else
+        {
 
         float speedFrac = rigidbody.velocity.magnitude / maxSpeed;
         float velocityRightDot = Vector3.Dot(rigidbody.velocity, transform.right);
@@ -110,6 +120,8 @@ public class PlaneMover : MonoBehaviour
         {
             propAnim.gameObject.SetActive(true);
         }
+
+        }
     }
 
     void OnCollisionEnter( Collision col )
@@ -136,5 +148,10 @@ public class PlaneMover : MonoBehaviour
             graceTimer = gracePeriod;
             playerCamera.TriggerShake();
         }
+    }
+
+    public void OnLightningDamage( GameObject cloud )
+    {
+        rigidbody.AddTorque( transform.forward * 1000000f );
     }
 }
