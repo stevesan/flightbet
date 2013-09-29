@@ -58,7 +58,6 @@ public class LightningCloud : MonoBehaviour
 
         if( thisPlane != null )
         {
-            Debug.Log("plane entered");
             plane = thisPlane;
         }
     }
@@ -70,7 +69,6 @@ public class LightningCloud : MonoBehaviour
         if( plane == thisPlane )
         {
             plane = null;
-            Debug.Log("plane exited");
         }
     }
 }

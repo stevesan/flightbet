@@ -333,6 +333,7 @@ MonoBehaviour:
   backWingMoveClip: {fileID: 8300000, guid: 3e63dd8b923b1421cb64520ee961311f, type: 3}
   moveScale: 2
   gracePeriod: 1
+  debugControls: 0
   playerCamera: {fileID: 0}
 --- !u!114 &11400002
 MonoBehaviour:

@@ -109,7 +109,7 @@ MonoBehaviour:
   startWindChance: 0
   endWindChance: .0500000007
   startLightningChance: 0
-  endLightningChance: .0199999996
+  endLightningChance: .0500000007
   lightningMinY: 20
   easyHoopChance: .100000001
 --- !u!114 &11400004

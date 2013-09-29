@@ -163,7 +163,6 @@ public class LevelGenerator : MonoBehaviour
         for( int y = 0; y < sizeY; y++ )
         {
             terrainChars[0, y] = 'd';
-            terrainChars[sizeX-1, y] = 'd';
         }
 
         //----------------------------------------
@@ -242,6 +241,11 @@ public class LevelGenerator : MonoBehaviour
                 }
             }
         }
+
+        //----------------------------------------
+        //  Dragon
+        //----------------------------------------
+        objectsChars[sizeX-1, sizeY-10] = 'd';
 
         //----------------------------------------
         //  Easy Hoops
