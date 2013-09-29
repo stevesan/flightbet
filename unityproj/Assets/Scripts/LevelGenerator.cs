@@ -148,7 +148,7 @@ public class LevelGenerator : MonoBehaviour
         }
 
         //----------------------------------------
-        //  Fill the top with solid ground so the plane doesn't leave
+        //  Fill the borders
         //----------------------------------------
         for( int x = 0; x < sizeX; x++ )
         {
@@ -158,6 +158,7 @@ public class LevelGenerator : MonoBehaviour
         for( int y = 0; y < sizeY; y++ )
         {
             terrainChars[0, y] = 'd';
+            terrainChars[sizeX-1, y] = 'd';
         }
 
         //----------------------------------------
