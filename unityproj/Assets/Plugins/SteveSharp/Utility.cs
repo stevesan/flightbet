@@ -93,6 +93,21 @@ namespace SteveSharp
             System.TimeSpan diff = System.DateTime.Now.ToUniversalTime() - origin;
             return System.Math.Floor(diff.TotalMilliseconds);
         }
+
+        public static Vector3 SampleCircleXY( Vector3 c, float radius )
+        {
+            Vector3 x = new Vector3( c.x + radius, c.y + radius, c.z + radius );
+
+            while( Vector3.Distance( c, x ) > radius )
+            {
+                x = new Vector3(
+                        c.x + Mathf.Lerp(-radius, radius, Random.value),
+                        c.y + Mathf.Lerp(-radius, radius, Random.value),
+                        c.z + Mathf.Lerp(-radius, radius, Random.value) );
+            }
+
+            return x;
+        }
     }
 
 }

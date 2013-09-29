@@ -715,6 +715,53 @@ MonoBehaviour:
     fps: 15
     loopStart: 0
     wrapMode: 0
+  - name: CashFloat
+    frames:
+    - spriteCollection: {fileID: 11400000, guid: fcf9f8695e7374bc1aa4558c7b2c3b4c,
+        type: 2}
+      spriteId: 66
+      triggerEvent: 0
+      eventInfo: 
+      eventInt: 0
+      eventFloat: 0
+    - spriteCollection: {fileID: 11400000, guid: fcf9f8695e7374bc1aa4558c7b2c3b4c,
+        type: 2}
+      spriteId: 65
+      triggerEvent: 0
+      eventInfo: 
+      eventInt: 0
+      eventFloat: 0
+    - spriteCollection: {fileID: 11400000, guid: fcf9f8695e7374bc1aa4558c7b2c3b4c,
+        type: 2}
+      spriteId: 70
+      triggerEvent: 0
+      eventInfo: 
+      eventInt: 0
+      eventFloat: 0
+    - spriteCollection: {fileID: 11400000, guid: fcf9f8695e7374bc1aa4558c7b2c3b4c,
+        type: 2}
+      spriteId: 67
+      triggerEvent: 0
+      eventInfo: 
+      eventInt: 0
+      eventFloat: 0
+    - spriteCollection: {fileID: 11400000, guid: fcf9f8695e7374bc1aa4558c7b2c3b4c,
+        type: 2}
+      spriteId: 69
+      triggerEvent: 0
+      eventInfo: 
+      eventInt: 0
+      eventFloat: 0
+    - spriteCollection: {fileID: 11400000, guid: fcf9f8695e7374bc1aa4558c7b2c3b4c,
+        type: 2}
+      spriteId: 68
+      triggerEvent: 0
+      eventInfo: 
+      eventInt: 0
+      eventFloat: 0
+    fps: 15
+    loopStart: 0
+    wrapMode: 3
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
