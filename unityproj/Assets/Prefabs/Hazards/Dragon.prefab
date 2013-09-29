@@ -153,7 +153,7 @@ Rigidbody:
   m_Mass: 1
   m_Drag: 0
   m_AngularDrag: .0500000007
-  m_UseGravity: 1
+  m_UseGravity: 0
   m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 58
@@ -168,7 +168,7 @@ Rigidbody:
   m_Mass: 1
   m_Drag: 0
   m_AngularDrag: .0500000007
-  m_UseGravity: 1
+  m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 122
@@ -195,7 +195,7 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 42.7200012, y: 105.940002, z: 1}
+  m_Size: {x: 42.7200012, y: 204.25, z: 47.9000015}
   m_Center: {x: 0, y: -60.4000015, z: 0}
 --- !u!114 &11400000
 MonoBehaviour:
@@ -210,7 +210,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   library: {fileID: 11400000, guid: 9e1d14b55d09c44ab85490f0e36c1e2c, type: 2}
   defaultClipId: 4
-  playAutomatically: 0
+  playAutomatically: 1
 --- !u!114 &11400002
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -263,7 +263,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   initOffset: {x: -75, y: 100, z: 0}
-  dropOffset: {x: -75, y: -50, z: 0}
+  dropOffset: {x: -75, y: -55, z: 0}
 --- !u!145 &14500000
 SpringJoint:
   m_ObjectHideFlags: 1

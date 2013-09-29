@@ -29,7 +29,8 @@ public class LevelGenerator : MonoBehaviour
     public float endLightningChance = 0.5f;
     public int lightningMinY = 10;
 
-    public float easyHoopChance = 0.025f;
+    public float startHoopChance = 0.1f;
+    public float endHoopChance = 0.5f;
 
     public static string GridToString( char[,] grid )
     {
@@ -252,9 +253,13 @@ public class LevelGenerator : MonoBehaviour
         //----------------------------------------
         for( int x = 10; x < sizeX; x++ )
         {
-            if( Random.value < easyHoopChance )
+            float chance = Utility.LinearMap(
+                    0, sizeX,
+                    startHoopChance, endHoopChance,
+                    x );
+            if( Random.value < chance )
             {
-                int yMin = terrainHeight[x] + 3;
+                int yMin = terrainHeight[x] + 1;
                 int y = Mathf.FloorToInt( Mathf.Lerp( yMin, sizeY, Random.value ) );
                 objectsChars[x, y] = 'e';
             }

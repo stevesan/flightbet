@@ -44,6 +44,14 @@ public class PlaneMover : MonoBehaviour
         Reset();
 	}
 
+    void Update()
+    {
+        if( Input.GetKeyDown("p") )
+        {
+            debugControls = !debugControls;
+        }
+    }
+
     void FixedUpdate()
     {
         if( isDead )
