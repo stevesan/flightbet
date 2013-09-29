@@ -108,6 +108,9 @@ MonoBehaviour:
   endMineChance: .5
   startWindChance: 0
   endWindChance: .0500000007
+  startLightningChance: 0
+  endLightningChance: .0199999996
+  lightningMinY: 20
   easyHoopChance: .100000001
 --- !u!114 &11400004
 MonoBehaviour:
@@ -164,8 +167,8 @@ MonoBehaviour:
   prefabMap:
   - character: w
     prefab: {fileID: 100000, guid: 46c4dccd3a0f7415ea1d03ed85263923, type: 2}
-  - character: b
-    prefab: {fileID: 100002, guid: 97415207cfb924932b6856f180c89e71, type: 2}
+  - character: l
+    prefab: {fileID: 100002, guid: d62175e6bccde4398be092e3207ee26f, type: 2}
   - character: c
     prefab: {fileID: 100002, guid: 320bd88013c6f4e4cbeff0df0ff20be7, type: 2}
   - character: m
