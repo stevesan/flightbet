@@ -86,6 +86,13 @@ namespace SteveSharp
             b.min = Vector3.Min( b.min, other.min );
             b.max = Vector3.Max( b.max, other.max );
         }
+
+        public static double GetSystemTime()
+        {
+            System.DateTime origin = new System.DateTime(1970, 1, 1, 0, 0, 0, 0);
+            System.TimeSpan diff = System.DateTime.Now.ToUniversalTime() - origin;
+            return System.Math.Floor(diff.TotalMilliseconds);
+        }
     }
 
 }
