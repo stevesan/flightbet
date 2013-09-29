@@ -43,11 +43,20 @@ public class PlaneMover : MonoBehaviour
         transform.rotation = spawnRot;
     }
 
-    // Use this for initialization
-	void Start()
+    public bool GetIsDead()
+    {
+        return isDead;
+    }
+
+    void Awake()
     {
         spawnPos = transform.position;
         spawnRot = transform.rotation;
+    }
+
+    // Use this for initialization
+	void Start()
+    {
         Reset();
 	}
 

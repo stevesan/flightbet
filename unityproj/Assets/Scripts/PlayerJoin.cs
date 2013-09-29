@@ -60,6 +60,7 @@ public class PlayerJoin : MonoBehaviour
     			if (Globals.activePilotPlayerIndex <= 0)
     			{
     				Globals.activePilotPlayerIndex = p;
+    				Globals.ActivePlayerBuyIn();
     				Globals.readyPlayers[p - 1] = true;
     				newPlayer.SetActive(false);
     			}

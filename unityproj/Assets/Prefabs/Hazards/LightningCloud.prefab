@@ -153,8 +153,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e0b0733b5eb44cd988255c3aa6b5ace, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  minCooldown: 3
-  maxCooldown: 8
+  minCooldown: .5
+  maxCooldown: 3
   anim: {fileID: 11400000}
   lightningFrame: 38
   lightningPrefab: {fileID: 100000, guid: 703538991b1374ab8bf7edc5d598525e, type: 2}

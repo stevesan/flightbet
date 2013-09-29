@@ -27,7 +27,7 @@ public class GoalSpawner : MonoBehaviour
 			{
 				GameObject newGoal = (GameObject) Instantiate(goalPrefab, new Vector3(0, 0, 0), Quaternion.identity);
 
-				newGoal.transform.position = new Vector3(Globals.playerBetPos[p], 0, 0);
+				newGoal.transform.position = new Vector3(Globals.playerBetPos[p], 64, 0);
 				newGoal.GetComponent<tk2dSprite>().color = Globals.playerColors[p];
 				goals.Add(newGoal);
 			}

@@ -44,7 +44,9 @@ public class ScreenController : MonoBehaviour
 
     public void StartFlying()
     {
+        countdownText.text = "";
         flyScreen.SetActive(true);
+        planeMover.GetComponent<PlaneMover>().Reset();
         gambleScreen.SetActive(false);
     }
 

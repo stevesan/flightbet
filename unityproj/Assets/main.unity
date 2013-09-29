@@ -172,6 +172,9 @@ MonoBehaviour:
   endMineChance: .5
   startWindChance: 0
   endWindChance: .0500000007
+  startLightningChance: 0
+  endLightningChance: .0199999996
+  lightningMinY: 20
   easyHoopChance: .100000001
 --- !u!1001 &394935947
 Prefab:
@@ -1488,15 +1491,15 @@ GUIText:
   m_GameObject: {fileID: 561551407}
   m_Enabled: 1
   serializedVersion: 3
-  m_Text: Place Your Bet
+  m_Text: Place Your Bets
   m_Anchor: 4
   m_Alignment: 1
   m_PixelOffset: {x: 0, y: 0}
   m_LineSpacing: 1
   m_TabSize: 4
-  m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+  m_Font: {fileID: 12800000, guid: 229bb6125e45644b9a6d2b81a917c29b, type: 3}
   m_Material: {fileID: 0}
-  m_FontSize: 64
+  m_FontSize: 120
   m_FontStyle: 0
   m_Color:
     serializedVersion: 2
@@ -1545,9 +1548,9 @@ GUIText:
   m_PixelOffset: {x: 0, y: 0}
   m_LineSpacing: 1
   m_TabSize: 4
-  m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+  m_Font: {fileID: 12800000, guid: 229bb6125e45644b9a6d2b81a917c29b, type: 3}
   m_Material: {fileID: 0}
-  m_FontSize: 64
+  m_FontSize: 120
   m_FontStyle: 0
   m_Color:
     serializedVersion: 2
@@ -1780,6 +1783,45 @@ MonoBehaviour:
   spawnOnAwake: 1
   rowStep: {x: 0, y: 117.199997, z: 0}
   colStep: {x: 117.199997, y: 0, z: 0}
+--- !u!1 &925798483
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 925798484}
+  - 114: {fileID: 925798485}
+  m_Layer: 0
+  m_Name: CheckBets
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &925798484
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 925798483}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 2001363234}
+--- !u!114 &925798485
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 925798483}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b07feada83fe57c4fa5cc2e980c69983, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  plane: {fileID: 1924159098}
 --- !u!1 &960706736
 GameObject:
   m_ObjectHideFlags: 0
@@ -2121,8 +2163,8 @@ MonoBehaviour:
   prefabMap:
   - character: w
     prefab: {fileID: 100000, guid: 46c4dccd3a0f7415ea1d03ed85263923, type: 2}
-  - character: b
-    prefab: {fileID: 100002, guid: 97415207cfb924932b6856f180c89e71, type: 2}
+  - character: l
+    prefab: {fileID: 100002, guid: d62175e6bccde4398be092e3207ee26f, type: 2}
   - character: c
     prefab: {fileID: 100002, guid: 320bd88013c6f4e4cbeff0df0ff20be7, type: 2}
   - character: m
@@ -2698,6 +2740,7 @@ MonoBehaviour:
   backWingMoveClip: {fileID: 8300000, guid: 3e63dd8b923b1421cb64520ee961311f, type: 3}
   moveScale: 2
   gracePeriod: 1
+  debugControls: 0
   playerCamera: {fileID: 1997719539}
 --- !u!54 &1924159103
 Rigidbody:
@@ -3053,6 +3096,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1058065268}
+  - {fileID: 925798484}
   - {fileID: 1997719540}
   - {fileID: 833932157}
   - {fileID: 1924159099}
