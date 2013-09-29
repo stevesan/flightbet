@@ -39,7 +39,7 @@ public class LightningCloud : MonoBehaviour
         {
             if( anim.CurrentFrame >= lightningFrame )
             {
-                Utility.Instantiate( lightningPrefab, transform.position );
+                Utility.Instantiate( lightningPrefab, transform.position, transform );
                 isStriking = false;
                 cooldown = Random.Range( minCooldown, maxCooldown );
 
