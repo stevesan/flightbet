@@ -116,6 +116,11 @@ public class PlaneMover : MonoBehaviour
             isDead = true;
             deadPlane.SetActive(true);
             alivePlane.SetActive(false);
+
+            thrustAudio.Stop();
+            thrustFx.Stop();
+            propAnim.Stop();
+
             Debug.Log("game over");
         }
         else if( graceTimer < 0 )

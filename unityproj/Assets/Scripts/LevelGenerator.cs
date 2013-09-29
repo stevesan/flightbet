@@ -118,6 +118,11 @@ public class LevelGenerator : MonoBehaviour
             terrainChars[x, sizeY-1] = 't';
         }
 
+        for( int y = 0; y < sizeY; y++ )
+        {
+            terrainChars[0, y] = 'd';
+        }
+
         //----------------------------------------
         //  Clouds
         //----------------------------------------

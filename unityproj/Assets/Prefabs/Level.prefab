@@ -95,8 +95,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   genOnAwake: 1
-  sizeX: 100
-  sizeY: 25
+  sizeX: 200
+  sizeY: 28
   terrainSpawner: {fileID: 11400004}
   objectsSpawner: {fileID: 11400006}
   terrainPerlinFreq: .100000001
@@ -128,8 +128,8 @@ MonoBehaviour:
     prefab: {fileID: 100002, guid: 31e2cbca381424a02b8e7a33d0d05c97, type: 2}
   - character: l
     prefab: {fileID: 100002, guid: 33f895994fedf4102a3227477805a3df, type: 2}
-  - character: c
-    prefab: {fileID: 100002, guid: 320bd88013c6f4e4cbeff0df0ff20be7, type: 2}
+  - character: t
+    prefab: {fileID: 100002, guid: edc5f926b463f411b8e04d1130ccb43f, type: 2}
   - character: d
     prefab: {fileID: 100002, guid: 83e126db5c5fc4bc4ba545694bd4d2fa, type: 2}
   - character: r
