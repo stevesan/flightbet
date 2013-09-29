@@ -5,6 +5,7 @@ public class FloatingCash : MonoBehaviour
 {
     public float initLifetime = 3f;
     public Vector3 velocity = Vector3.zero;
+    public tk2dSpriteAnimator anim;
 
     float lifetime = 0f;
 
@@ -13,6 +14,7 @@ public class FloatingCash : MonoBehaviour
 	void Start()
     {
         lifetime = initLifetime;
+        anim.SetFrame( Random.Range( 0, 10 ) );
 	}
 	
 	// Update is called once per frame
