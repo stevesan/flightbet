@@ -42,9 +42,9 @@ public class PlayerJoin : MonoBehaviour
     		if (!GetPlayerJoined(p) && Input.GetAxisRaw("P" + p + "Accel") > 0.5f)
     		{
     			Globals.playerMoney[p - 1] = Globals.startingMoney;
-    			GameObject newPlayer = (GameObject) Instantiate(joinedPlayerPrefab, new Vector3(0, -12, 0), Quaternion.identity);
+    			GameObject newPlayer = (GameObject) Instantiate(joinedPlayerPrefab, new Vector3(0, 0.2f, 0), Quaternion.identity);
     			newPlayer.GetComponent<GambleMover>().SetPlayerIndex(p);
-    			newPlayer.transform.Find("GambleArrow").gameObject.GetComponent<tk2dSprite>().color = playerColors[p - 1];
+    			newPlayer.transform.Find("GambleArrow").gameObject.GetComponent<GUITexture>().color = playerColors[p - 1];
     			newPlayer.transform.parent = parentScreen.transform;
     			JoinedPlayer joinedPlayer = new JoinedPlayer();
     			joinedPlayer.joinedPlayerGO = newPlayer;
