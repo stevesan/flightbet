@@ -193,6 +193,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   explodeFx: {fileID: 100000, guid: a486beefd32ca4cd4b5f47de93e3602c, type: 2}
   explodeClip: {fileID: 8300000, guid: 1c417526fc456440dba344e782f5d151, type: 3}
+  cashPrefab: {fileID: 100000, guid: 8dd0f51e4f28843b192e629cf9861cd3, type: 2}
+  numCashes: 10
+  cashSpawnRadius: 5
 --- !u!135 &13500000
 SphereCollider:
   m_ObjectHideFlags: 1

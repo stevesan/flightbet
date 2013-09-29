@@ -4,8 +4,11 @@ using SteveSharp;
 
 public class Hoop : MonoBehaviour
 {
-    public GameObject explodeFx;
     public AudioClip explodeClip;
+
+    public GameObject cashPrefab;
+    public int numCashes = 10;
+    public float cashSpawnRadius = 5f;
 
 	// Use this for initialization
 	void Start () {
@@ -21,12 +24,24 @@ public class Hoop : MonoBehaviour
     {
     	if (col.gameObject.GetComponent<PlaneMover>() != null)
     	{
-        	Utility.Instantiate( explodeFx, transform.position );
         	AudioSource.PlayClipAtPoint( explodeClip, transform.position );
             Destroy(gameObject);
 
         	// Award pilot $.
             Globals.playerMoney[Globals.activePilotPlayerIndex - 1] += Globals.hoopReward;
+
+            SpawnCash();
+        }
+    }
+
+    void SpawnCash()
+    {
+        for( int i = 0; i < numCashes; i++ )
+        {
+            Vector3 p = Utility.SampleCircleXY( transform.position, cashSpawnRadius );
+            GameObject inst = Utility.Instantiate( cashPrefab, p );
+            FloatingCash cash = inst.GetComponent<FloatingCash>();
+            cash.velocity = (p-transform.position).normalized * 10f;
         }
     }
 }

@@ -173,9 +173,10 @@ MonoBehaviour:
   startWindChance: 0
   endWindChance: .0500000007
   startLightningChance: 0
-  endLightningChance: .0199999996
+  endLightningChance: .0500000007
   lightningMinY: 20
-  easyHoopChance: .100000001
+  startHoopChance: 0
+  endHoopChance: .300000012
 --- !u!1001 &394935947
 Prefab:
   m_ObjectHideFlags: 0
@@ -1887,7 +1888,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 1
-  m_BackGroundColor: {r: .525490224, g: .525490224, b: .525490224, a: 1}
+  m_BackGroundColor: {r: .419607848, g: .490196079, b: .694117665, a: 1}
   m_NormalizedViewPortRect:
     serializedVersion: 2
     x: 0
@@ -2171,6 +2172,8 @@ MonoBehaviour:
     prefab: {fileID: 100002, guid: ddf369c7a957447eab1d3c6517f45955, type: 2}
   - character: e
     prefab: {fileID: 100004, guid: deb22d2d26924fc4d8b503a4bbdbd282, type: 2}
+  - character: d
+    prefab: {fileID: 100004, guid: 4e437801402704272816b1fdcd2cf500, type: 2}
   playerStartChar: s
   ignoreChar: .
   spawnOnAwake: 0
@@ -2222,7 +2225,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3fac570381f34f647b768dc5a5aa1364, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  collection: {fileID: 11400000, guid: fcf9f8695e7374bc1aa4558c7b2c3b4c, type: 2}
+  collection: {fileID: 0}
   _color: {r: 1, g: 1, b: 1, a: 1}
   _scale: {x: 1, y: 1, z: 1}
   _spriteId: 12
@@ -2349,7 +2352,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3fac570381f34f647b768dc5a5aa1364, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  collection: {fileID: 11400000, guid: fcf9f8695e7374bc1aa4558c7b2c3b4c, type: 2}
+  collection: {fileID: 0}
   _color: {r: 1, g: 1, b: 1, a: 1}
   _scale: {x: 1, y: 1, z: 1}
   _spriteId: 33
@@ -2426,7 +2429,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3fac570381f34f647b768dc5a5aa1364, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  collection: {fileID: 11400000, guid: fcf9f8695e7374bc1aa4558c7b2c3b4c, type: 2}
+  collection: {fileID: 0}
   _color: {r: 1, g: 1, b: 1, a: 1}
   _scale: {x: 1, y: 1, z: 1}
   _spriteId: 10
@@ -3001,7 +3004,7 @@ MonoBehaviour:
   target: {fileID: 1924159099}
   limitsRef: {fileID: 353021853}
   limitsMin: {x: 80, y: 50, z: -99999}
-  limitsMax: {x: 1000, y: 100, z: 99999}
+  limitsMax: {x: 850, y: 100, z: 99999}
   smoothTime: .100000001
   maxShakeOffset: {x: 7, y: 7, z: 0}
   shakeDuration: 1
