@@ -70,7 +70,7 @@ public class LevelGenerator : MonoBehaviour
     public void Generate()
     {
         char bgEmptyChar = terrainSpawner.ignoreChar[0];
-        char[,] bgChars = CreateCharGrid( bgEmptyChar );
+        char[,] terrainChars = CreateCharGrid( bgEmptyChar );
         int[] terrainHeight = new int[ sizeX ];
 
         //----------------------------------------
@@ -85,29 +85,37 @@ public class LevelGenerator : MonoBehaviour
             terrainHeight[x] = yMax;
 
             for( int y = 0; y < yMax; y++ )
-                bgChars[x,y] = 'd';
-            bgChars[x, yMax] = 'g';
+                terrainChars[x,y] = 'd';
+            terrainChars[x, yMax] = 'g';
         }
 
         // Figure out which ones should be slope tiles
         for( int x = 1; x < sizeX-1; x++ )
         {
             int y = terrainHeight[x];
-            bool leftFilled = bgChars[x-1, y] != bgEmptyChar;
-            bool rightFilled = bgChars[x+1, y] != bgEmptyChar;
+            bool leftFilled = terrainChars[x-1, y] != bgEmptyChar;
+            bool rightFilled = terrainChars[x+1, y] != bgEmptyChar;
 
             if( !leftFilled && rightFilled )
             {
-                bgChars[x, y] = 'l';
+                terrainChars[x, y] = 'l';
                 if( y-1 >= 0 )
-                    bgChars[x, y-1] = 'd';
+                    terrainChars[x, y-1] = 'd';
             }
             else if( leftFilled && !rightFilled )
             {
-                bgChars[x, y] = 'r';
+                terrainChars[x, y] = 'r';
                 if( y-1 >= 0 )
-                    bgChars[x, y-1] = 'd';
+                    terrainChars[x, y-1] = 'd';
             }
+        }
+
+        //----------------------------------------
+        //  Fill the top with solid ground so the plane doesn't leave
+        //----------------------------------------
+        for( int x = 0; x < sizeX; x++ )
+        {
+            terrainChars[x, sizeY-1] = 't';
         }
 
         //----------------------------------------
@@ -128,13 +136,13 @@ public class LevelGenerator : MonoBehaviour
 
                 if( perlin > thresh )
                 {
-                    bgChars[x,y] = 'c';
+                    terrainChars[x,y] = 'c';
                 }
             }
         }
         */
 
-        terrainSpawner.Spawn( GridToString(bgChars) );
+        terrainSpawner.Spawn( GridToString(terrainChars) );
 
         //----------------------------------------
         //  Mines

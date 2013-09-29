@@ -340,7 +340,8 @@ MonoBehaviour:
   propAnim: {fileID: 11400002}
   deadPlane: {fileID: 100008}
   alivePlane: {fileID: 100002}
-  damageFx: {fileID: 100000, guid: c98e323c7b4f344c084238edc9c5d66c, type: 2}
+  damageFx: {fileID: 100000, guid: f90b173538ae748cfa6f09bd09284be8, type: 2}
+  dieFx: {fileID: 100000, guid: c98e323c7b4f344c084238edc9c5d66c, type: 2}
   backWingMoveClip: {fileID: 8300000, guid: 3e63dd8b923b1421cb64520ee961311f, type: 3}
   moveScale: 2
   gracePeriod: 1
