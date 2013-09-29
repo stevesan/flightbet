@@ -24,7 +24,9 @@ public class Hoop : MonoBehaviour
         	Utility.Instantiate( explodeFx, transform.position );
         	AudioSource.PlayClipAtPoint( explodeClip, transform.position );
             Destroy(gameObject);
+
         	// Award pilot $.
+            Globals.playerMoney[Globals.activePilotPlayerIndex - 1] += Globals.hoopReward;
         }
     }
 }

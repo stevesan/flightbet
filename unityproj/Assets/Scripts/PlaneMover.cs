@@ -27,6 +27,9 @@ public class PlaneMover : MonoBehaviour
     float graceTimer = 0;
     bool isDead = false;
 
+    Vector3 spawnPos;
+    Quaternion spawnRot;
+
     public void Reset()
     {
         deadPlane.SetActive(false);
@@ -34,11 +37,15 @@ public class PlaneMover : MonoBehaviour
         isDead = false;
         graceTimer = 0;
         prevBackWingSign = 0;
+        transform.position = spawnPos;
+        transform.rotation = spawnRot;
     }
 
     // Use this for initialization
 	void Start()
     {
+        spawnPos = transform.position;
+        spawnRot = transform.rotation;
         Reset();
 	}
 
@@ -51,12 +58,12 @@ public class PlaneMover : MonoBehaviour
         float velocityRightDot = Vector3.Dot(rigidbody.velocity, transform.right);
         float normalizedVelocityRightDot = Vector3.Dot(rigidbody.velocity.normalized, transform.right);
 
-        float angleChange = -Input.GetAxisRaw("Vertical");
+        float angleChange = Input.GetAxisRaw("P" + Globals.activePilotPlayerIndex + "Vertical");
         rigidbody.AddTorque(new Vector3(0f, 0f, angleChange * angularSpeed * Mathf.Max(0, normalizedVelocityRightDot) * speedFrac));
 
 
         float negativeVelocityRightDot = Mathf.Clamp(velocityRightDot, -1, 0);
-        Vector3 move = moveScale * transform.right * Mathf.Max(0, Input.GetAxisRaw("Fire1") * (throttle - (throttle * negativeVelocityRightDot)));
+        Vector3 move = moveScale * transform.right * Mathf.Max(0, Input.GetAxisRaw("P" + Globals.activePilotPlayerIndex + "Accel") * (throttle - (throttle * negativeVelocityRightDot)));
         rigidbody.AddForce(move, ForceMode.Force);
 
         float liftForce = normalizedVelocityRightDot;
@@ -88,7 +95,7 @@ public class PlaneMover : MonoBehaviour
         //----------------------------------------
         //  Backwing fx
         //----------------------------------------
-        int backWingSign = Utility.SignOrZero(Input.GetAxisRaw("Vertical"));
+        int backWingSign = Utility.SignOrZero(Input.GetAxisRaw("P" + Globals.activePilotPlayerIndex + "Vertical"));
         backWing.transform.localEulerAngles = new Vector3( 0, 0, backWingSign * 45 );
         if( backWingSign != prevBackWingSign )
             AudioSource.PlayClipAtPoint( backWingMoveClip, transform.position );

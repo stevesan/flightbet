@@ -23,6 +23,11 @@ public class GambleMover : MonoBehaviour
         winAmount.SetActive(false);
 	}
 
+    public void Reset()
+    {
+        gameObject.SetActive(Globals.activePilotPlayerIndex != playerIndex);
+    }
+
     public void SetPlayerIndex(int setIndex)
     {
         playerIndex = setIndex;
@@ -81,6 +86,8 @@ public class GambleMover : MonoBehaviour
             betAmount.SetActive(true);
             winAmount.SetActive(true);
             Globals.playerBetAmount[playerIndex - 1] = betAmountMoney;
+            Globals.playerMoney[playerIndex - 1] -= betAmountMoney;
+            Globals.readyPlayers[playerIndex - 1] = true;
             gambleMode = GambleMode.Ready;
         }
     }
