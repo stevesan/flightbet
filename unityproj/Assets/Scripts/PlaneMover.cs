@@ -15,6 +15,7 @@ public class PlaneMover : MonoBehaviour
     public GameObject deadPlane;
     public GameObject alivePlane;
     public GameObject damageFx;
+    public GameObject dieFx;
     public AudioClip backWingMoveClip;
     public float moveScale = 1f;
     public float gracePeriod = 1f;
@@ -109,12 +110,17 @@ public class PlaneMover : MonoBehaviour
         if( col.gameObject.GetComponent<Ground>() != null )
         {
             // game over!
-            Utility.Instantiate( damageFx, transform.position );
+            Utility.Instantiate( dieFx, transform.position );
             gameOverEvent.Trigger(this);
             playerCamera.TriggerShake();
             isDead = true;
             deadPlane.SetActive(true);
             alivePlane.SetActive(false);
+
+            thrustAudio.Stop();
+            thrustFx.Stop();
+            propAnim.Stop();
+
             Debug.Log("game over");
         }
         else if( graceTimer < 0 )

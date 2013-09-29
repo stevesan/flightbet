@@ -6,8 +6,8 @@ public class FollowCamera : MonoBehaviour
 {
     public Transform target;
     public Transform limitsRef;
-    public float minY = 0f;
-    public float maxY = 100f;
+    public Vector3 limitsMin;
+    public Vector3 limitsMax;
     public float smoothTime = 0.5f;
     public Vector3 maxShakeOffset;
 
@@ -42,7 +42,8 @@ public class FollowCamera : MonoBehaviour
 	void LateUpdate()
     {
         unshakenPosition = Vector3.SmoothDamp( unshakenPosition, target.position+offset, ref followVelocity, smoothTime );
-        unshakenPosition.y = Mathf.Clamp( unshakenPosition.y, limitsRef.position.y + minY, limitsRef.position.y + maxY );
+        unshakenPosition = Vector3.Min( limitsMax + limitsRef.position,
+                Vector3.Max( limitsMin + limitsRef.position, unshakenPosition ));
 
         Vector3 shakeOffset = Mathf.Max( 0f, Utility.Unlerp(0, shakeDuration, shakeRemainTime) )
             * Vector3.Scale( new Vector3( Random.value, Random.value, Random.value ), maxShakeOffset );

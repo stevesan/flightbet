@@ -191,8 +191,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 14e86b05f62463140ae92239a90e568f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  explodeFx: {fileID: 100000, guid: 286f433143e7d4ad09beb6f8560ff988, type: 2}
-  explodeClip: {fileID: 8300000, guid: a943c8554cf9d4344937c903d3ae41aa, type: 3}
+  explodeFx: {fileID: 100000, guid: a486beefd32ca4cd4b5f47de93e3602c, type: 2}
+  explodeClip: {fileID: 8300000, guid: 1c417526fc456440dba344e782f5d151, type: 3}
 --- !u!135 &13500000
 SphereCollider:
   m_ObjectHideFlags: 1

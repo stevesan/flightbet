@@ -19,10 +19,11 @@ public class Hoop : MonoBehaviour
 
     void OnTriggerEnter( Collider col )
     {
-    	if (col.gameObject.name == "Plane")
+    	if (col.gameObject.GetComponent<PlaneMover>() != null)
     	{
         	Utility.Instantiate( explodeFx, transform.position );
         	AudioSource.PlayClipAtPoint( explodeClip, transform.position );
+            Destroy(gameObject);
         	// Award pilot $.
         }
     }
