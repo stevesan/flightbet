@@ -5,9 +5,9 @@ using SteveSharp;
 public class Mine : MonoBehaviour
 {
     public GameObject explodeFx;
-    public AudioClip explodeClip;
     public float bobHeight = 1f;
     public Vector3 bobForce = Vector3.up;
+    public float explodeForceMag = 1f;
 
     Vector3 startPos;
     float bobOffset = 0f;
@@ -30,8 +30,10 @@ public class Mine : MonoBehaviour
     {
         if( col.gameObject.GetComponent<Piloted>() != null )
         {
+            Vector3 toTarget = (col.gameObject.transform.position - transform.position).normalized;
+            col.rigidbody.AddForce( toTarget * explodeForceMag );
+
             Utility.Instantiate( explodeFx, transform.position );
-            AudioSource.PlayClipAtPoint( explodeClip, transform.position );
             Destroy(gameObject);
         }
     }

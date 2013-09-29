@@ -12,28 +12,29 @@ public class PlaneMover : MonoBehaviour
     public ParticleSystem thrustFx;
     public GameObject backWing;
     public tk2dSpriteAnimator propAnim;
-    public tk2dSpriteAnimator explosionAnim;
+    public GameObject damageFx;
     public AudioClip backWingMoveClip;
     public float moveScale = 1f;
+    public float gracePeriod = 1f;
 
     int prevBackWingSign = 0;
+    float graceTimer = 0;
 
     int hp = 2;
 
     // Use this for initialization
 	void Start()
     {
-        explosionAnim.gameObject.SetActive(false);
 	}
 
     void FixedUpdate()
     {
-        float speedPercent = rigidbody.velocity.magnitude / maxSpeed;
+        float speedFrac = rigidbody.velocity.magnitude / maxSpeed;
         float velocityRightDot = Vector3.Dot(rigidbody.velocity, transform.right);
         float normalizedVelocityRightDot = Vector3.Dot(rigidbody.velocity.normalized, transform.right);
 
         float angleChange = -Input.GetAxisRaw("Vertical");
-        rigidbody.AddTorque(new Vector3(0f, 0f, angleChange * angularSpeed * Mathf.Max(0, normalizedVelocityRightDot) * speedPercent));
+        rigidbody.AddTorque(new Vector3(0f, 0f, angleChange * angularSpeed * Mathf.Max(0, normalizedVelocityRightDot) * speedFrac));
 
 
         float negativeVelocityRightDot = Mathf.Clamp(velocityRightDot, -1, 0);
@@ -41,12 +42,14 @@ public class PlaneMover : MonoBehaviour
         rigidbody.AddForce(move, ForceMode.Force);
 
         float liftForce = normalizedVelocityRightDot;
-        rigidbody.AddForce(transform.up * liftForce * liftSpeed * speedPercent, ForceMode.Force);
+        rigidbody.AddForce(transform.up * liftForce * liftSpeed * speedFrac, ForceMode.Force);
 
+        /*
         if (rigidbody.velocity.magnitude > maxSpeed)
         {
             rigidbody.velocity = rigidbody.velocity.normalized * maxSpeed;
         }
+        */
 
         //----------------------------------------
         //  Thrust fx
@@ -72,16 +75,24 @@ public class PlaneMover : MonoBehaviour
         if( backWingSign != prevBackWingSign )
             AudioSource.PlayClipAtPoint( backWingMoveClip, transform.position );
         prevBackWingSign = backWingSign;
+
+        graceTimer -= Time.deltaTime;
+        if( graceTimer > 0 )
+        {
+            propAnim.gameObject.SetActive( Mathf.FloorToInt((graceTimer/gracePeriod)/0.1f) % 2 == 0);
+        }
+        else
+        {
+            propAnim.gameObject.SetActive(true);
+        }
     }
 
     void OnCollisionEnter( Collision col )
     {
-        hp--;
-
-        if( hp <= 0 )
+        if( graceTimer < 0 )
         {
-            explosionAnim.gameObject.SetActive(false);
-            explosionAnim.Play();
+            Utility.Instantiate( damageFx, transform.position );
+            graceTimer = gracePeriod;
         }
     }
 }

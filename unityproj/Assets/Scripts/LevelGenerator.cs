@@ -11,7 +11,6 @@ public class LevelGenerator : MonoBehaviour
     public int sizeY = 10;
     public LevelSpawner terrainSpawner;
     public LevelSpawner objectsSpawner;
-    public LevelSpawner bgSpawner;
 
     public float terrainPerlinFreq = 0.1f;
     public float terrainMaxHeight = 5;
@@ -64,7 +63,6 @@ public class LevelGenerator : MonoBehaviour
 
     public void DestroyAll()
     {
-        bgSpawner.DestroyAll();
         objectsSpawner.DestroyAll();
         terrainSpawner.DestroyAll();
     }

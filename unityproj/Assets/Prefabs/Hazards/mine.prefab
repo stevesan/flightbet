@@ -185,10 +185,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 07bb0874cb9614dbe9a7c2ccfe7cf9a5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  explodeFx: {fileID: 100000, guid: 286f433143e7d4ad09beb6f8560ff988, type: 2}
-  explodeClip: {fileID: 8300000, guid: a943c8554cf9d4344937c903d3ae41aa, type: 3}
+  explodeFx: {fileID: 100000, guid: c98e323c7b4f344c084238edc9c5d66c, type: 2}
   bobHeight: 2
   bobForce: {x: 0, y: 5, z: 0}
+  explodeForceMag: 2000
 --- !u!114 &11400004
 MonoBehaviour:
   m_ObjectHideFlags: 1
