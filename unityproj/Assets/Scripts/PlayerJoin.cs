@@ -24,7 +24,7 @@ public class PlayerJoin : MonoBehaviour
 
 	private bool GetPlayerJoined(int playerIndex)
 	{
-		return Globals.numPlayers >= playerIndex;
+		return Globals.joinedPlayers[playerIndex - 1];
 	}
 	
 	// Update is called once per frame
@@ -34,6 +34,7 @@ public class PlayerJoin : MonoBehaviour
     	{
     		if (!GetPlayerJoined(p) && Input.GetAxisRaw("P" + p + "Accel") > 0.5f)
     		{
+    			Debug.Log("detected " + p);
     			Globals.playerMoney[p - 1] = Globals.startingMoney;
     			Globals.playerColors[p - 1] = playerColors[p - 1];
     			if (Globals.activePilotPlayerIndex <= 0)
@@ -57,6 +58,7 @@ public class PlayerJoin : MonoBehaviour
 
 	    		playersHUD.OnPlayerAdded(p);
 	    		Globals.numPlayers++;
+	    		Globals.joinedPlayers[p - 1] = true;
     		}
     	}
 	}

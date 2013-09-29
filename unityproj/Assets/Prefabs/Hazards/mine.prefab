@@ -187,7 +187,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   explodeFx: {fileID: 100000, guid: 46eaa57e654154e549dc9b953eb85bf4, type: 2}
   bobHeight: 2
-  bobForce: {x: 0, y: 5, z: 0}
+  bobForce: {x: 0, y: 0, z: 0}
   explodeForceMag: 2000
 --- !u!114 &11400004
 MonoBehaviour:

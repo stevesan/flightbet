@@ -5,7 +5,7 @@ public class Globals
 	public static int maxPlayers = 6;
 	public static float CalculatePayoffPercent(float distPercent)
 	{
-		return (distPercent * 3) + 1;
+		return Mathf.Pow(distPercent, -1f / 2f);
 	}
 
 	public static float startingMoney = 100;
@@ -15,4 +15,5 @@ public class Globals
 	public static float[] playerBetPos = new float[maxPlayers];
 	public static float[] playerBetAmount = new float[maxPlayers];
 	public static Color[] playerColors = new Color[maxPlayers];
+	public static bool[] joinedPlayers = new bool[maxPlayers];
 }

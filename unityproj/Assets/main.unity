@@ -153,11 +153,9 @@ MonoBehaviour:
   objectsSpawner: {fileID: 1115569768}
   terrainPerlinFreq: .100000001
   terrainMaxHeight: 10
-  cloudPerlinXFreq: .100000001
-  cloudPerlinYFreq: .300000012
-  cloudPerlinThreshA: .699999988
-  cloudPerlinThreshB: .200000003
-  cloudYMin: 10
+  cloudChanceMin: 0
+  cloudChanceMax: .100000001
+  cloudMinY: 15
   startMineChance: 0
   endMineChance: .5
   startWindChance: 0
@@ -309,7 +307,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 1997719540}
-  offsetScale: {x: 1, y: 0, z: 0}
+  offsetScale: {x: 0, y: 0, z: 0}
 --- !u!114 &425701095
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1596,7 +1594,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   countdownText: {fileID: 859840666}
   screenController: {fileID: 878875561}
-  countdownTime: 15
+  countdownTime: 60
 --- !u!1 &878875559
 GameObject:
   m_ObjectHideFlags: 0
@@ -1873,7 +1871,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 1997719540}
-  offsetScale: {x: .75, y: 0, z: 0}
+  offsetScale: {x: .25, y: 0, z: 0}
 --- !u!114 &989319233
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2422,6 +2420,18 @@ MonoBehaviour:
     prefab: {fileID: 100002, guid: 83e126db5c5fc4bc4ba545694bd4d2fa, type: 2}
   - character: r
     prefab: {fileID: 100002, guid: 006e0db2b7e264872b4422b4c7813cbe, type: 2}
+  - character: 1
+    prefab: {fileID: 100002, guid: f47db66dfd391454893bdc5a28955557, type: 2}
+  - character: 2
+    prefab: {fileID: 100002, guid: 1e09eb283cc03402e98d89312b0d373e, type: 2}
+  - character: 7
+    prefab: {fileID: 100002, guid: 8f1302d27b63341fc87380e1530b70de, type: 2}
+  - character: 8
+    prefab: {fileID: 100000, guid: a530e9c40884043bf9d7e555569aaffd, type: 2}
+  - character: 9
+    prefab: {fileID: 100002, guid: 9651df84516e2482690f09c0e7cbec35, type: 2}
+  - character: 0
+    prefab: {fileID: 100000, guid: 8357d023e5263470c806e78243f0bba2, type: 2}
   playerStartChar: s
   ignoreChar: .
   spawnOnAwake: 0
@@ -2484,11 +2494,11 @@ GameObject:
   m_Component:
   - 4: {fileID: 1924159099}
   - 33: {fileID: 1924159105}
-  - 65: {fileID: 1924159104}
   - 54: {fileID: 1924159103}
   - 114: {fileID: 1924159102}
   - 82: {fileID: 1924159101}
   - 114: {fileID: 1924159100}
+  - 136: {fileID: 1924159104}
   m_Layer: 0
   m_Name: Plane
   m_TagString: Untagged
@@ -2626,19 +2636,20 @@ Rigidbody:
   m_Interpolate: 1
   m_Constraints: 56
   m_CollisionDetection: 0
---- !u!65 &1924159104
-BoxCollider:
+--- !u!136 &1924159104
+CapsuleCollider:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 6500000, guid: f1897263133dfa049b6f844a38edf13a,
+  m_PrefabParentObject: {fileID: 13600000, guid: f1897263133dfa049b6f844a38edf13a,
     type: 2}
   m_PrefabInternal: {fileID: 394935947}
   m_GameObject: {fileID: 1924159098}
-  m_Material: {fileID: 13400000, guid: 8413fc41a9401814292d0a7ad6f804b1, type: 2}
+  m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 9.25, y: 3.22000003, z: 8.71000004}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Radius: 1.35000002
+  m_Height: 8.88000011
+  m_Direction: 0
+  m_Center: {x: 0, y: -.180000007, z: 0}
 --- !u!33 &1924159105
 MeshFilter:
   m_ObjectHideFlags: 0

@@ -426,7 +426,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100018}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 25, z: 0}
+  m_LocalPosition: {x: 0, y: 60, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 400014}
@@ -1056,11 +1056,9 @@ MonoBehaviour:
   objectsSpawner: {fileID: 11400006}
   terrainPerlinFreq: .100000001
   terrainMaxHeight: 10
-  cloudPerlinXFreq: .100000001
-  cloudPerlinYFreq: .300000012
-  cloudPerlinThreshA: .699999988
-  cloudPerlinThreshB: .200000003
-  cloudYMin: 10
+  cloudChanceMin: .5
+  cloudChanceMax: .200000003
+  cloudMinY: 10
   startMineChance: .100000001
   endMineChance: .5
   startWindChance: .100000001
