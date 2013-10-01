@@ -22,7 +22,7 @@ public class CheckAllPlayersReady : MonoBehaviour
         if (Globals.numPlayers > 1)
         {
             allReady = true;
-            for (int p = 0; p < Globals.numPlayers; p++)
+            for (int p = 0; p < Globals.maxPlayers; p++)
             {
                 if (Globals.joinedPlayers[p] && !Globals.readyPlayers[p])
                 {

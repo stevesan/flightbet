@@ -15,7 +15,7 @@ public class Globals
 		int nextIndex = zeroBasedIndex + 1;
 		for (int p = 0; p < Globals.maxPlayers; p++)
 		{
-			if (nextIndex > numPlayers)
+			if (nextIndex >= numPlayers)
 			{
 				nextIndex = 0;
 			}
