@@ -108,6 +108,8 @@ MonoBehaviour:
   endMineChance: .5
   startWindChance: 0
   endWindChance: .0500000007
+  startSpeedBoostChance: 0
+  endSpeedBoostChance: .0399999991
   startLightningChance: 0
   endLightningChance: .0500000007
   lightningMinY: 20
@@ -171,14 +173,16 @@ MonoBehaviour:
   - character: l
     prefab: {fileID: 100002, guid: d62175e6bccde4398be092e3207ee26f, type: 2}
   - character: c
-    prefab: {fileID: 100002, guid: 320bd88013c6f4e4cbeff0df0ff20be7, type: 2}
+    prefab: {fileID: 0}
   - character: m
     prefab: {fileID: 100002, guid: ddf369c7a957447eab1d3c6517f45955, type: 2}
   - character: e
     prefab: {fileID: 100004, guid: deb22d2d26924fc4d8b503a4bbdbd282, type: 2}
   - character: d
     prefab: {fileID: 100004, guid: 4e437801402704272816b1fdcd2cf500, type: 2}
-  playerStartChar: s
+  - character: s
+    prefab: {fileID: 100004, guid: 1869ba324ce094769810e1776365bbaa, type: 2}
+  playerStartChar: '-'
   ignoreChar: .
   spawnOnAwake: 0
   rowStep: {x: 0, y: 4.80000019, z: 0}

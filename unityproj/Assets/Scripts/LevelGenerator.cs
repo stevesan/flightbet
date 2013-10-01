@@ -25,6 +25,9 @@ public class LevelGenerator : MonoBehaviour
     public float startWindChance = 0.1f;
     public float endWindChance = 0.5f;
 
+    public float startSpeedBoostChance = 0.1f;
+    public float endSpeedBoostChance = 0.5f;
+
     public float startLightningChance = 0.1f;
     public float endLightningChance = 0.5f;
     public int lightningMinY = 10;
@@ -237,6 +240,24 @@ public class LevelGenerator : MonoBehaviour
                     if( objectsChars[x,y] == objectsSpawner.ignoreChar[0] )
                     {
                         objectsChars[x,y] = 'l';
+                        break;
+                    }
+                }
+            }
+
+            float boostChance = Utility.LinearMap(
+                    0, sizeX,
+                    startSpeedBoostChance, endSpeedBoostChance,
+                    x );
+            if( Random.value < boostChance )
+            {
+                while(true)
+                {
+                    int y = Mathf.FloorToInt(
+                            Mathf.Lerp( yMin, sizeY, Random.value ) );
+                    if( objectsChars[x,y] == objectsSpawner.ignoreChar[0] )
+                    {
+                        objectsChars[x,y] = 's';
                         break;
                     }
                 }

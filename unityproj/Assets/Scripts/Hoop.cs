@@ -39,7 +39,7 @@ public class Hoop : MonoBehaviour
             Vector3 p = Utility.SampleCircleXY( transform.position, cashSpawnRadius );
             GameObject inst = Utility.Instantiate( cashPrefab, p );
             FloatingCash cash = inst.GetComponent<FloatingCash>();
-            cash.velocity = (p-transform.position).normalized * 1f;
+            //cash.velocity = (p-transform.position).normalized * 1f;
         }
     }
 }
