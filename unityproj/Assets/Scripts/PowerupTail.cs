@@ -12,6 +12,11 @@ public class PowerupTail : MonoBehaviour
 
     Vector3 smoothVelocity = Vector3.zero;
 
+    public void Clear()
+    {
+        powerup = null;
+    }
+
     public void Add(GameObject pup)
     {
         if( powerup != null )

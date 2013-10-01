@@ -104,6 +104,7 @@ MonoBehaviour:
   initLifetime: 3
   velocity: {x: 0, y: -10, z: 0}
   anim: {fileID: 11400000}
+  accel: {x: 0, y: -10, z: 0}
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

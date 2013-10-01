@@ -29,6 +29,15 @@ public class PlaneMover : MonoBehaviour
     float graceTimer = 0;
     bool isDead = false;
 
+    Vector3 spawnPos;
+    Quaternion spawnRot;
+
+    void Awake()
+    {
+        spawnPos = transform.position;
+        spawnRot = transform.rotation;
+    }
+
     public void Reset()
     {
         deadPlane.SetActive(false);
@@ -36,6 +45,10 @@ public class PlaneMover : MonoBehaviour
         isDead = false;
         graceTimer = 0;
         prevBackWingSign = 0;
+        rigidbody.velocity = Vector3.zero;
+        rigidbody.angularVelocity = Vector3.zero;
+        transform.position = spawnPos;
+        transform.rotation = spawnRot;
     }
 
     // Use this for initialization

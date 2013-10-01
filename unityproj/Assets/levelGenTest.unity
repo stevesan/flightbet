@@ -924,6 +924,10 @@ Prefab:
       propertyPath: prefabMap.Array.data[2].prefab
       value: 
       objectReference: {fileID: 100002, guid: 320bd88013c6f4e4cbeff0df0ff20be7, type: 2}
+    - target: {fileID: 11400002, guid: 960e10dec2f7c4cd995e8da7e8db3036, type: 2}
+      propertyPath: genOnAwake
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 960e10dec2f7c4cd995e8da7e8db3036, type: 2}
   m_RootGameObject: {fileID: 567704323}
@@ -2267,6 +2271,46 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 266792049}
+--- !u!1 &1694327225
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1694327227}
+  - 114: {fileID: 1694327226}
+  m_Layer: 0
+  m_Name: PracticeController
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1694327226
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1694327225}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9e08bc95d910b45f0942e4afafabbf3e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gen: {fileID: 567704326}
+  plane: {fileID: 266792050}
+--- !u!4 &1694327227
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1694327225}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 12.1818171, y: 5.42054987, z: -.00099858793}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
 --- !u!1001 &1758114867
 Prefab:
   m_ObjectHideFlags: 0
