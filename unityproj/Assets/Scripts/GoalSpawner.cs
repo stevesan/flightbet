@@ -23,11 +23,14 @@ public class GoalSpawner : MonoBehaviour
 	{
 		for (int p = 0; p < Globals.numPlayers; p++)
 		{
-			GameObject newGoal = (GameObject) Instantiate(goalPrefab, new Vector3(0, 0, 0), Quaternion.identity);
+			if (Globals.joinedPlayers[p] && (p + 1) != Globals.activePilotPlayerIndex)
+			{
+				GameObject newGoal = (GameObject) Instantiate(goalPrefab, new Vector3(0, 0, 0), Quaternion.identity);
 
-			newGoal.transform.position = new Vector3(Globals.playerBetPos[p], 0, 0);
-			newGoal.GetComponent<tk2dSprite>().color = Globals.playerColors[p];
-			goals.Add(newGoal);
+				newGoal.transform.position = new Vector3(Globals.playerBetPos[p], 64, 0);
+				newGoal.GetComponent<tk2dSprite>().color = Globals.playerColors[p];
+				goals.Add(newGoal);
+			}
 		}
 	}
 

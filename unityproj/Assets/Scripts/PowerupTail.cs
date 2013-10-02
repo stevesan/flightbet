@@ -28,7 +28,7 @@ public class PowerupTail : MonoBehaviour
 
     void Update()
     {
-        if( Input.GetButtonDown("Fire2") )
+        if( Input.GetButtonDown("P"+Globals.activePilotPlayerIndex+"Powerup") )
         {
             if( powerup != null )
             {

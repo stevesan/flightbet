@@ -26,7 +26,9 @@ public class Hoop : MonoBehaviour
     	{
         	AudioSource.PlayClipAtPoint( explodeClip, transform.position );
             Destroy(gameObject);
+
         	// Award pilot $.
+            Globals.playerMoney[Globals.activePilotPlayerIndex - 1] += Globals.hoopReward;
 
             SpawnCash();
         }

@@ -29,6 +29,7 @@ public class BetCountdown : MonoBehaviour
     	if (timeLeft <= 0)
     	{
     		screenController.StartFlying();
+            countdownText.text = "";
     	}
 	}
 }

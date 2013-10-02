@@ -7,6 +7,11 @@ public class PracticeController : MonoBehaviour
     public LevelGenerator gen;
     public PlaneMover plane;
 
+    void Awake()
+    {
+        Globals.activePilotPlayerIndex = 1;
+    }
+
     void Reset()
     {
         gen.DestroyAll();
